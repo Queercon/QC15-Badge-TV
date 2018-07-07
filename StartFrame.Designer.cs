@@ -40,6 +40,7 @@ namespace se.nightri.QC15_TV_Badge
             this.headingCenter = new System.Windows.Forms.Label();
             this.baseEncLayer = new System.Windows.Forms.Label();
             this.serialPortRead = new System.IO.Ports.SerialPort(this.components);
+            this.drawFileOverlay = new DrawFile();
             this.SuspendLayout();
             // 
             // btnFullScreen
@@ -102,6 +103,13 @@ namespace se.nightri.QC15_TV_Badge
             this.baseEncLayer.TabIndex = 5;
             this.baseEncLayer.Text = "baseEncLayer X X X X";
             // 
+            // drawFileOverlay
+            // 
+            this.drawFileOverlay.Location = new System.Drawing.Point(41, 71);
+            this.drawFileOverlay.Name = "drawFileOverlay";
+            this.drawFileOverlay.Size = new System.Drawing.Size(420, 442);
+            this.drawFileOverlay.TabIndex = 0;
+            // 
             // StartFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,6 +117,7 @@ namespace se.nightri.QC15_TV_Badge
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnRestore;
             this.ClientSize = new System.Drawing.Size(1036, 736);
+            this.Controls.Add(this.drawFileOverlay);
             this.Controls.Add(this.btnFullScreen);
             this.Controls.Add(this.baseDecLayer);
             this.Controls.Add(this.btnRestore);
@@ -131,6 +140,8 @@ namespace se.nightri.QC15_TV_Badge
         private System.Windows.Forms.Label headingCenter;
         private System.Windows.Forms.Label baseEncLayer;
         private System.IO.Ports.SerialPort serialPortRead;
+
+        private DrawFile drawFileOverlay;
     }
 }
 
