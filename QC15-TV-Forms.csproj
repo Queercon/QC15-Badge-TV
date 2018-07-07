@@ -148,9 +148,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="code_file.txt" />
-    <Content Include="decrypted_file.txt" />
-    <Content Include="encrypted_file.txt" />
     <Content Include="favicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
