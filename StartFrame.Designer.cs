@@ -43,7 +43,7 @@
             this.btnFullScreen.Name = "btnFullScreen";
             this.btnFullScreen.Size = new System.Drawing.Size(75, 23);
             this.btnFullScreen.TabIndex = 0;
-            this.btnFullScreen.Text = "&Full Screen";
+            this.btnFullScreen.Text = "&Start";
             this.btnFullScreen.UseVisualStyleBackColor = true;
             this.btnFullScreen.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -88,9 +88,9 @@
             this.CancelButton = this.btnRestore;
             this.ClientSize = new System.Drawing.Size(1046, 662);
             this.Controls.Add(this.displayFile);
-            this.Controls.Add(this.headingCenter);
             this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.btnFullScreen);
+            this.Controls.Add(this.headingCenter);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartFrame";
             this.Text = "QC TV";
