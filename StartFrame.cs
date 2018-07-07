@@ -22,11 +22,16 @@ namespace se.nightri.QC15_TV_Badge
         // Declare a delegate used to communicate with the UI thread
         private delegate void UpdateStatusDelegate();
         private UpdateStatusDelegate updateStatusDelegate = null;
+        public static char[] encStr = new Char[2880];
+        public static char[] dcrStr = new Char[2880];
+        public static char[] keyStr = new Char[2880];
+
 
         public StartFrame()
         {
             InitializeComponent();
             // Initialise the delegate
+
             this.updateStatusDelegate = new UpdateStatusDelegate(this.UpdateStatus);
         }
 

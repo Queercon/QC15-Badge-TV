@@ -65,11 +65,11 @@ namespace se.nightri.QC15_TV_Badge
             this.displayFile.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.displayFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.displayFile.Location = new System.Drawing.Point(51, 100);
-            this.displayFile.MaximumSize = new System.Drawing.Size(630, 70);
+            this.displayFile.MaximumSize = new System.Drawing.Size(920, 30000);
             this.displayFile.Name = "displayFile";
-            this.displayFile.Size = new System.Drawing.Size(108, 18);
+            this.displayFile.Size = new System.Drawing.Size(918, 576);
             this.displayFile.TabIndex = 3;
-            this.displayFile.Text = "Start here";
+            this.displayFile.Text = resources.GetString("displayFile.Text");
             // 
             // StartFrame
             // 
@@ -77,7 +77,7 @@ namespace se.nightri.QC15_TV_Badge
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnRestore;
-            this.ClientSize = new System.Drawing.Size(1046, 662);
+            this.ClientSize = new System.Drawing.Size(1036, 736);
             this.Controls.Add(this.displayFile);
             this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.btnFullScreen);
