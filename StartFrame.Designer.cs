@@ -32,11 +32,14 @@ namespace se.nightri.QC15_TV_Badge
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartFrame));
             this.btnFullScreen = new System.Windows.Forms.Button();
             this.btnRestore = new System.Windows.Forms.Button();
-            this.displayFile = new System.Windows.Forms.Label();
+            this.baseDecLayer = new System.Windows.Forms.Label();
             this.headingCenter = new System.Windows.Forms.Label();
+            this.baseEncLayer = new System.Windows.Forms.Label();
+            this.serialPortRead = new System.IO.Ports.SerialPort(this.components);
             this.SuspendLayout();
             // 
             // btnFullScreen
@@ -60,20 +63,22 @@ namespace se.nightri.QC15_TV_Badge
             this.btnRestore.UseVisualStyleBackColor = true;
             this.btnRestore.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // displayFile
+            // baseDecLayer
             // 
-            this.displayFile.AutoSize = true;
-            this.displayFile.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.displayFile.Location = new System.Drawing.Point(51, 100);
-            this.displayFile.MaximumSize = new System.Drawing.Size(920, 30000);
-            this.displayFile.Name = "displayFile";
-            this.displayFile.Size = new System.Drawing.Size(148, 18);
-            this.displayFile.TabIndex = 3;
-            this.displayFile.Text = "Will Load Here";
+            this.baseDecLayer.AutoSize = true;
+            this.baseDecLayer.BackColor = System.Drawing.Color.Transparent;
+            this.baseDecLayer.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.baseDecLayer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.baseDecLayer.Location = new System.Drawing.Point(51, 141);
+            this.baseDecLayer.MaximumSize = new System.Drawing.Size(920, 30000);
+            this.baseDecLayer.Name = "baseDecLayer";
+            this.baseDecLayer.Size = new System.Drawing.Size(218, 18);
+            this.baseDecLayer.TabIndex = 3;
+            this.baseDecLayer.Text = "baseDecLayer0 0 0 0 0";
             // 
             // headingCenter
             // 
+            this.headingCenter.BackColor = System.Drawing.Color.Transparent;
             this.headingCenter.Dock = System.Windows.Forms.DockStyle.Top;
             this.headingCenter.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headingCenter.ForeColor = System.Drawing.Color.Lime;
@@ -84,6 +89,19 @@ namespace se.nightri.QC15_TV_Badge
             this.headingCenter.Text = "QC15 Badge Game";
             this.headingCenter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // baseEncLayer
+            // 
+            this.baseEncLayer.AutoSize = true;
+            this.baseEncLayer.BackColor = System.Drawing.Color.Transparent;
+            this.baseEncLayer.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.baseEncLayer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.baseEncLayer.Location = new System.Drawing.Point(51, 141);
+            this.baseEncLayer.MaximumSize = new System.Drawing.Size(920, 30000);
+            this.baseEncLayer.Name = "baseEncLayer";
+            this.baseEncLayer.Size = new System.Drawing.Size(208, 18);
+            this.baseEncLayer.TabIndex = 5;
+            this.baseEncLayer.Text = "baseEncLayer X X X X";
+            // 
             // StartFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -91,10 +109,11 @@ namespace se.nightri.QC15_TV_Badge
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnRestore;
             this.ClientSize = new System.Drawing.Size(1036, 736);
-            this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.btnFullScreen);
+            this.Controls.Add(this.baseDecLayer);
+            this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.headingCenter);
-            this.Controls.Add(this.displayFile);
+            this.Controls.Add(this.baseEncLayer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartFrame";
             this.Text = "QC TV";
@@ -108,8 +127,10 @@ namespace se.nightri.QC15_TV_Badge
 
         private System.Windows.Forms.Button btnFullScreen;
         private System.Windows.Forms.Button btnRestore;
-        private System.Windows.Forms.Label displayFile;
+        private System.Windows.Forms.Label baseDecLayer;
         private System.Windows.Forms.Label headingCenter;
+        private System.Windows.Forms.Label baseEncLayer;
+        private System.IO.Ports.SerialPort serialPortRead;
     }
 }
 

@@ -49,7 +49,9 @@ namespace se.nightri.QC15_TV_Badge
             dcrStr = dcrStrS.ToCharArray();
             keyStr = keyStrS.ToCharArray();
 
-            displayFile.Text = encStrS;
+
+
+            //baseEncLayer.Text = encStrS;
 
             // Initialise the delegate
             this.updateStatusDelegate = new UpdateStatusDelegate(this.UpdateStatus);
@@ -57,7 +59,7 @@ namespace se.nightri.QC15_TV_Badge
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           // headingCenter.Hide();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,8 +67,6 @@ namespace se.nightri.QC15_TV_Badge
             formState.Maximize(this);
             btnFullScreen.Hide();
             btnRestore.Hide();
-            //headingCenter.Show();
-
 
             this.stopProcess = false;
 
@@ -82,7 +82,6 @@ namespace se.nightri.QC15_TV_Badge
             formState.Restore(this);
             btnFullScreen.Show();
             btnRestore.Show();
-            //headingCenter.Hide();
 
         }
 
@@ -107,7 +106,7 @@ namespace se.nightri.QC15_TV_Badge
 
         private void UpdateStatus()
         {
-            this.displayFile.Text += "*";
+            //this.baseDecLayer.Text += "*";
         }
 
 

@@ -98,6 +98,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DrawFile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DrawingArea.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormState.cs" />
     <Compile Include="StartFrame.cs">
       <SubType>Form</SubType>
