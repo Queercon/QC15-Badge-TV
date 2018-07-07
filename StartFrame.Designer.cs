@@ -1,4 +1,6 @@
-﻿namespace se.nightri.QC15_TV_Badge
+﻿using System.Drawing;
+
+namespace se.nightri.QC15_TV_Badge
 {
     partial class StartFrame
     {
@@ -33,7 +35,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartFrame));
             this.btnFullScreen = new System.Windows.Forms.Button();
             this.btnRestore = new System.Windows.Forms.Button();
-            this.headingCenter = new System.Windows.Forms.Label();
             this.displayFile = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             // btnRestore
             // 
             this.btnRestore.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnRestore.Location = new System.Drawing.Point(94, 11);
+            this.btnRestore.Location = new System.Drawing.Point(93, 12);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(75, 23);
             this.btnRestore.TabIndex = 1;
@@ -58,27 +59,17 @@
             this.btnRestore.UseVisualStyleBackColor = true;
             this.btnRestore.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // headingCenter
-            // 
-            this.headingCenter.BackColor = System.Drawing.Color.Transparent;
-            this.headingCenter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.headingCenter.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.headingCenter.ForeColor = System.Drawing.Color.Lime;
-            this.headingCenter.Location = new System.Drawing.Point(0, 0);
-            this.headingCenter.Name = "headingCenter";
-            this.headingCenter.Size = new System.Drawing.Size(1046, 662);
-            this.headingCenter.TabIndex = 2;
-            this.headingCenter.Text = "Some Cool Test";
-            this.headingCenter.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // displayFile
             // 
             this.displayFile.AutoSize = true;
+            this.displayFile.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.displayFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.displayFile.Location = new System.Drawing.Point(51, 65);
+            this.displayFile.Location = new System.Drawing.Point(51, 100);
+            this.displayFile.MaximumSize = new System.Drawing.Size(630, 70);
             this.displayFile.Name = "displayFile";
-            this.displayFile.Size = new System.Drawing.Size(0, 13);
+            this.displayFile.Size = new System.Drawing.Size(108, 18);
             this.displayFile.TabIndex = 3;
+            this.displayFile.Text = "Start here";
             // 
             // StartFrame
             // 
@@ -90,7 +81,6 @@
             this.Controls.Add(this.displayFile);
             this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.btnFullScreen);
-            this.Controls.Add(this.headingCenter);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartFrame";
             this.Text = "QC TV";
@@ -104,7 +94,6 @@
 
         private System.Windows.Forms.Button btnFullScreen;
         private System.Windows.Forms.Button btnRestore;
-        private System.Windows.Forms.Label headingCenter;
         private System.Windows.Forms.Label displayFile;
     }
 }

@@ -32,7 +32,7 @@ namespace se.nightri.QC15_TV_Badge
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            headingCenter.Hide();
+           // headingCenter.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace se.nightri.QC15_TV_Badge
             formState.Maximize(this);
             btnFullScreen.Hide();
             btnRestore.Hide();
-            headingCenter.Show();
+            //headingCenter.Show();
 
             displayFile.Text = "Some Cool Test";
 
@@ -59,7 +59,7 @@ namespace se.nightri.QC15_TV_Badge
             formState.Restore(this);
             btnFullScreen.Show();
             btnRestore.Show();
-            headingCenter.Hide();
+            //headingCenter.Hide();
 
         }
 
@@ -86,6 +86,7 @@ namespace se.nightri.QC15_TV_Badge
         {
             this.displayFile.Text += "*";
         }
+
 
     }
 }
