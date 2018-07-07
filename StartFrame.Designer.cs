@@ -33,7 +33,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartFrame));
             this.btnFullScreen = new System.Windows.Forms.Button();
             this.btnRestore = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.headingCenter = new System.Windows.Forms.Label();
+            this.displayFile = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnFullScreen
@@ -57,18 +58,27 @@
             this.btnRestore.UseVisualStyleBackColor = true;
             this.btnRestore.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // label1
+            // headingCenter
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Lime;
-            this.label1.Location = new System.Drawing.Point(309, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 42);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Some Cool Test";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.headingCenter.BackColor = System.Drawing.Color.Transparent;
+            this.headingCenter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.headingCenter.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.headingCenter.ForeColor = System.Drawing.Color.Lime;
+            this.headingCenter.Location = new System.Drawing.Point(0, 0);
+            this.headingCenter.Name = "headingCenter";
+            this.headingCenter.Size = new System.Drawing.Size(1046, 662);
+            this.headingCenter.TabIndex = 2;
+            this.headingCenter.Text = "Some Cool Test";
+            this.headingCenter.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // displayFile
+            // 
+            this.displayFile.AutoSize = true;
+            this.displayFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.displayFile.Location = new System.Drawing.Point(51, 65);
+            this.displayFile.Name = "displayFile";
+            this.displayFile.Size = new System.Drawing.Size(0, 13);
+            this.displayFile.TabIndex = 3;
             // 
             // StartFrame
             // 
@@ -76,8 +86,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnRestore;
-            this.ClientSize = new System.Drawing.Size(1056, 678);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1046, 662);
+            this.Controls.Add(this.displayFile);
+            this.Controls.Add(this.headingCenter);
             this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.btnFullScreen);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -93,7 +104,8 @@
 
         private System.Windows.Forms.Button btnFullScreen;
         private System.Windows.Forms.Button btnRestore;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label headingCenter;
+        private System.Windows.Forms.Label displayFile;
     }
 }
 

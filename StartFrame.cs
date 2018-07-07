@@ -23,7 +23,7 @@ namespace QC15_TV_Forms
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            headingCenter.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,6 +31,10 @@ namespace QC15_TV_Forms
             formState.Maximize(this);
             btnFullScreen.Hide();
             btnRestore.Hide();
+            headingCenter.Show();
+
+            displayFile.Text = "Some Cool Test";
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -38,6 +42,7 @@ namespace QC15_TV_Forms
             formState.Restore(this);
             btnFullScreen.Show();
             btnRestore.Show();
+            headingCenter.Hide();
         }
 
     }
