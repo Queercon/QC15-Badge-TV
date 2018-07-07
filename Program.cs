@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QC15_TV_Forms
+namespace se.nightri.QC15_TV_Badge
 {
     static class Program
     {

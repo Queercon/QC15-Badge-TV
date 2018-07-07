@@ -9,9 +9,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using QC15_TV_Forms;
+using se.nightri.QC15_TV_Badge;
 
-namespace QC15_TV_Forms
+namespace se.nightri.QC15_TV_Badge
 {
     public partial class StartFrame : Form
     {

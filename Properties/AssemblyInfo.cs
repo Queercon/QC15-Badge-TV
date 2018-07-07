@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Nightrise LLC")]
-[assembly: AssemblyProduct("QC15-TV-Forms")]
+[assembly: AssemblyProduct("QC15 TV Badge")]
 [assembly: AssemblyCopyright("Copyright Nightrise LLC ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

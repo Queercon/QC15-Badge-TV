@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace QC15_TV_Forms
+namespace se.nightri.QC15_TV_Badge
 {
     /// <summary>
     /// Selected Win AI Function Calls

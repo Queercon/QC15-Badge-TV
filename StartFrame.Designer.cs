@@ -1,4 +1,4 @@
-﻿namespace QC15_TV_Forms
+﻿namespace se.nightri.QC15_TV_Badge
 {
     partial class StartFrame
     {
