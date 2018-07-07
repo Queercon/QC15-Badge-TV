@@ -29,11 +29,16 @@ namespace QC15_TV_Forms
         private void button1_Click(object sender, EventArgs e)
         {
             formState.Maximize(this);
+            btnFullScreen.Hide();
+            btnRestore.Hide();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             formState.Restore(this);
+            btnFullScreen.Show();
+            btnRestore.Show();
         }
+
     }
 }

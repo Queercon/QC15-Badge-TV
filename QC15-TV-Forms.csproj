@@ -64,12 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FormState.cs" />
-    <Compile Include="FullScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FullScreen.Designer.cs">
-      <DependentUpon>FullScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="StartFrame.cs">
       <SubType>Form</SubType>
     </Compile>
