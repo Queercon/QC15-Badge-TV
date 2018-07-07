@@ -39,8 +39,8 @@ namespace se.nightri.QC15_TV_Badge
 
         public static String dcrStrS = "+++++o+++oooosyyyhhdsohdddds++yyshhddyymmdmddhsysydNmNhdhyssoo++++++++++++oo++syyyyyyyyyyyyssssyhhdddho/sysshsdy+hNhddyshmmmNmmNNNmmmmdmmNmhyo+osohhmmmdhhyysoo+++oooooosyyyyyyyyyyyyhy+/oysohyhy+/yhyhmdNhyNNmNmhymMNNmNNNNNNNNNNNmdmmmdysoo+/sdNNNNmmdddhhyssooosyyyyyyyyyyyhshs//syysdymdysmmhddmmydMNmNNddNmmNNMNNNNNNNNmmddddmmmdddyo/yNNmNNNNNmmmmmmdhhhhhhyhyyyyyhyddhssddhdmdmhsyddymhmhsdhhysooosdMMNmNNNNNNNNmddddddddhdmmhsodNMNNMmNNNNNmmmmmdmdddddhyyhhyhyo+ooooo+o+/++++++++++++oooosmMMNNNNNNNNNNNmdhhhhhdhhdmNNNhohNMMMNMNNMNmNmNmmdhmmdNdyyoo++++/////////////++ooosoooossymMMNNNNNNNNNNmmmhhhhhhhhhhdmdNNhodNNNNMNMMNNNNmNmhymmhmhyyosso++++++++++++/+oosssssssssssdMMNNNNNNNNmmmddhyyyyyyyhhhhmdyyyhhydmNMNMMNNNNmNdsohhsdyyyoossooooo+++++++ossyyyssssssyyyNMNNNNMNNNmdhhdhyyyyyyyyyyyhdddhsydhhyhmNNNNNNNdmho/shodyyysssssooooooooossyyyysysssyyyhhdNMMMMMMNNmhsshhyyyssssyyyyssyhdho++oossshhddddmdmho/ydymyhysssssoooooosssyyyyyyyyyyyhhhddmMMMMMMMNdhy++syysyyysssyyysssysso+++++o++//++///////+ooyhyyhhyysssssssyyhhhhhhhhhhdddddddmNMMMMMNmhs+++oosssysssssossyhyoo+++++++o+//:::-----:-::://+dddhhhyhhhhdddddddddddddhyyyyhhmNMMMNdyso+ooossysssssssoooyyso++++++++++++++///:://///////dddddddddmddmdddhyyyhyyyssssossydmmmdhyssooooosoooooosoo+oyoooooo++++++o+++++++/////++////++oosssssyyyyyysssssssyhhhhhhhhsshdddhhyssssoo++ooooooo+++ooooooooooooosoooooooooooo+/////---::/:://oosyddhdhhhhssydhhysyy++ddddhyyyyhhhyysssooooooooooossssssssysssssoooosso///////+://///:/:---:+yhyhssys/+yhyhsyyyoyddddddmmmmdhhyssooooooossssssssssssysssssssssosso+/++++yo/:-..-.....-::shhhyyhssymdmdhddysossymdyyyhddhyysssssssyyysshdhyyyyyyyyyyyyso+oyhysoo+++yyssoo+/::-.-/:-:ddNdmmddmNmNmmho+osydmNdsssshdhhyyssssyyyyssyddddhhhhhyyhyyso++oyhyyssoo+hyysssssssooo+::+ymNdmmddmNdmys++oshdmmNNhooooyhhyyysssssssyymmmmdddhhdhhhyssoooossyyyyssohhhhyyyssysssossoshyyhhyhhyssyyyyhddmmmNNmhsyddhhyyssyyyyyyyhmmmmNmmdddhhhyyyysssssssyyysshhhhhyyyyyyssssssyyyssssssssssyhhddmmmmNNNNNNNNmdysoshhmmdhhddddmmmNmmdhhhhyyyyssyssssyysshhhhhhhhhhyyyyyyyyyysssssssyysssyhhhdmmNMNNmmmmdysoshmmNmmdhddhhdmNmmmdhhhhhhhhyyyssooossshhhhhhhhhhhyyhhhyyyyyyyyssssyysssyyhdddmNNNdhddhyyyhmmmmmdddhdhhhdNmmmdhhhdhddhhhhyysooooohhhhhhhhhhyyyyyyyyyyyyyyyyyyyyyssssyddmdddhyyhhhhddmmmmmmmddddddddmNNmddddddddhhhhyyysssoohhhhhhhhhyyyyyyyyyyssyyyyyyyyyysssyhddmmddhyyyhdmNmmmmmmmmmmmmdhddmNNmmddddhdhhhhhhyyysssohhhhhhhhyyyyysyyyssssyyyyyyyyysssssyyyyhhddhyyhdmNNmmmmmmmmmmmmdddmNNmmmmddhhhhhyhyyssossshhhhhhhhhyysssyyyyyyyyyyyysssssssssssssssyyyyhhyyhmNNmmmmmmmmmmmdhmNNNmmmddhhhhyyyssssssoohhhhhhhhhyyysyyyyyyyssssssssosssssssoooosssyyhhhyyhNMNNmmmmmmmmdmhdNNNmmmdddhhyyyysssssooohhhhhhhyyyyyyyyyhhhyssssssooooooooooosoossssyyhdhhhmMMNNNNmmNNNdmhdNMNNmmmdddhhhyyysssooss";
 
-        public static String one = "X X X X X";
-        public static String two = " 0 0 0 0 0";
+        public String one = "X X X X X";
+        public String two = " 0 0 0 0 ";
         public bool draw = false;
 
         public StartFrame()
@@ -78,7 +78,7 @@ namespace se.nightri.QC15_TV_Badge
             {
                 OnDraw(one, two);
             }
-            
+
         }
 
         private void OnDraw(String one, String two)
@@ -99,8 +99,8 @@ namespace se.nightri.QC15_TV_Badge
             // Sets the text's font and style and draws it
             float fontSize = 16f;
             Point textPosition = new Point(50, 100);
-            DrawText("X X X X X X", "Courier New", fontSize, FontStyle.Regular, Brushes.Lime, textPosition);
-            DrawText(" 0 0 0 0 0 0", "Courier New", fontSize, FontStyle.Regular, Brushes.Lime, textPosition);
+            DrawText(one, "Courier New", fontSize, FontStyle.Regular, Brushes.Lime, textPosition);
+            DrawText(two, "Courier New", fontSize, FontStyle.Regular, Brushes.Lime, textPosition);
         }
 
         protected override CreateParams CreateParams
@@ -129,8 +129,8 @@ namespace se.nightri.QC15_TV_Badge
             formState.Maximize(this);
             btnFullScreen.Hide();
             btnRestore.Hide();
-
-            OnDraw(one, two);
+            
+            draw = true;
 
             this.stopProcess = false;
 
@@ -146,6 +146,10 @@ namespace se.nightri.QC15_TV_Badge
             formState.Restore(this);
             btnFullScreen.Show();
             btnRestore.Show();
+
+            
+
+            draw = true;
 
         }
 
@@ -170,7 +174,8 @@ namespace se.nightri.QC15_TV_Badge
 
         private void UpdateStatus()
         {
-            //this.baseDecLayer.Text += "*";
+            Invalidate();
+            one += "*";
         }
 
 
@@ -178,39 +183,39 @@ namespace se.nightri.QC15_TV_Badge
 
         protected void DrawText(string text, Point position)
         {
-            DrawingArea.DrawText(this.graphics, text, "Microsoft Sans Serif", 8.25f
+            DrawText(this.graphics, text, "Microsoft Sans Serif", 8.25f
                 , FontStyle.Regular, Brushes.Black, position);
         }
 
         protected void DrawText(string text, Brush color, Point position)
         {
-            DrawingArea.DrawText(this.graphics, text, "Microsoft Sans Serif", 8.25f
+            DrawText(this.graphics, text, "Microsoft Sans Serif", 8.25f
                 , FontStyle.Regular, color, position);
         }
 
         protected void DrawText(string text, FontStyle style, Point position)
         {
-            DrawingArea.DrawText(this.graphics, text, "Microsoft Sans Serif", 8.25f
+            DrawText(this.graphics, text, "Microsoft Sans Serif", 8.25f
                 , style, Brushes.Black, position);
         }
 
         protected void DrawText(string text, FontStyle style, Brush color, Point position)
         {
-            DrawingArea.DrawText(this.graphics, text, "Microsoft Sans Serif", 8.25f
+            DrawText(this.graphics, text, "Microsoft Sans Serif", 8.25f
                 , style, color, position);
         }
 
         protected void DrawText(string text, float fontSize, FontStyle style, Brush color
             , Point position)
         {
-            DrawingArea.DrawText(this.graphics, text, "Microsoft Sans Serif", fontSize
+            DrawText(this.graphics, text, "Microsoft Sans Serif", fontSize
                 , style, color, position);
         }
 
         protected void DrawText(string text, string fontFamily, float fontSize
             , FontStyle style, Brush color, Point position)
         {
-            DrawingArea.DrawText(this.graphics, text, fontFamily, fontSize, style, color, position);
+            DrawText(this.graphics, text, fontFamily, fontSize, style, color, position);
         }
 
         static public void DrawText(Graphics graphics, string text, string fontFamily

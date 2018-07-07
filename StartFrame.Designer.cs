@@ -42,7 +42,7 @@ namespace se.nightri.QC15_TV_Badge
             // 
             // btnFullScreen
             // 
-            this.btnFullScreen.Location = new System.Drawing.Point(12, 12);
+            this.btnFullScreen.Location = new System.Drawing.Point(93, 12);
             this.btnFullScreen.Name = "btnFullScreen";
             this.btnFullScreen.Size = new System.Drawing.Size(75, 23);
             this.btnFullScreen.TabIndex = 0;
@@ -53,7 +53,8 @@ namespace se.nightri.QC15_TV_Badge
             // btnRestore
             // 
             this.btnRestore.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnRestore.Location = new System.Drawing.Point(93, 12);
+            this.btnRestore.Location = new System.Drawing.Point(12, 12);
+            this.btnRestore.Margin = new System.Windows.Forms.Padding(0);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(75, 23);
             this.btnRestore.TabIndex = 1;
