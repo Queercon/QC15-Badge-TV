@@ -15,6 +15,7 @@ namespace se.nightri.QC15_TV_Badge
 {
     public partial class StartFrame : Form
     {
+
         protected Graphics graphics;
 
         FormState formState = new FormState();
@@ -39,12 +40,14 @@ namespace se.nightri.QC15_TV_Badge
 
         public static String dcrStrS = "+++++o+++oooosyyyhhdsohdddds++yyshhddyymmdmddhsysydNmNhdhyssoo++++++++++++oo++syyyyyyyyyyyyssssyhhdddho/sysshsdy+hNhddyshmmmNmmNNNmmmmdmmNmhyo+osohhmmmdhhyysoo+++oooooosyyyyyyyyyyyyhy+/oysohyhy+/yhyhmdNhyNNmNmhymMNNmNNNNNNNNNNNmdmmmdysoo+/sdNNNNmmdddhhyssooosyyyyyyyyyyyhshs//syysdymdysmmhddmmydMNmNNddNmmNNMNNNNNNNNmmddddmmmdddyo/yNNmNNNNNmmmmmmdhhhhhhyhyyyyyhyddhssddhdmdmhsyddymhmhsdhhysooosdMMNmNNNNNNNNmddddddddhdmmhsodNMNNMmNNNNNmmmmmdmdddddhyyhhyhyo+ooooo+o+/++++++++++++oooosmMMNNNNNNNNNNNmdhhhhhdhhdmNNNhohNMMMNMNNMNmNmNmmdhmmdNdyyoo++++/////////////++ooosoooossymMMNNNNNNNNNNmmmhhhhhhhhhhdmdNNhodNNNNMNMMNNNNmNmhymmhmhyyosso++++++++++++/+oosssssssssssdMMNNNNNNNNmmmddhyyyyyyyhhhhmdyyyhhydmNMNMMNNNNmNdsohhsdyyyoossooooo+++++++ossyyyssssssyyyNMNNNNMNNNmdhhdhyyyyyyyyyyyhdddhsydhhyhmNNNNNNNdmho/shodyyysssssooooooooossyyyysysssyyyhhdNMMMMMMNNmhsshhyyyssssyyyyssyhdho++oossshhddddmdmho/ydymyhysssssoooooosssyyyyyyyyyyyhhhddmMMMMMMMNdhy++syysyyysssyyysssysso+++++o++//++///////+ooyhyyhhyysssssssyyhhhhhhhhhhdddddddmNMMMMMNmhs+++oosssysssssossyhyoo+++++++o+//:::-----:-::://+dddhhhyhhhhdddddddddddddhyyyyhhmNMMMNdyso+ooossysssssssoooyyso++++++++++++++///:://///////dddddddddmddmdddhyyyhyyyssssossydmmmdhyssooooosoooooosoo+oyoooooo++++++o+++++++/////++////++oosssssyyyyyysssssssyhhhhhhhhsshdddhhyssssoo++ooooooo+++ooooooooooooosoooooooooooo+/////---::/:://oosyddhdhhhhssydhhysyy++ddddhyyyyhhhyysssooooooooooossssssssysssssoooosso///////+://///:/:---:+yhyhssys/+yhyhsyyyoyddddddmmmmdhhyssooooooossssssssssssysssssssssosso+/++++yo/:-..-.....-::shhhyyhssymdmdhddysossymdyyyhddhyysssssssyyysshdhyyyyyyyyyyyyso+oyhysoo+++yyssoo+/::-.-/:-:ddNdmmddmNmNmmho+osydmNdsssshdhhyyssssyyyyssyddddhhhhhyyhyyso++oyhyyssoo+hyysssssssooo+::+ymNdmmddmNdmys++oshdmmNNhooooyhhyyysssssssyymmmmdddhhdhhhyssoooossyyyyssohhhhyyyssysssossoshyyhhyhhyssyyyyhddmmmNNmhsyddhhyyssyyyyyyyhmmmmNmmdddhhhyyyysssssssyyysshhhhhyyyyyyssssssyyyssssssssssyhhddmmmmNNNNNNNNmdysoshhmmdhhddddmmmNmmdhhhhyyyyssyssssyysshhhhhhhhhhyyyyyyyyyysssssssyysssyhhhdmmNMNNmmmmdysoshmmNmmdhddhhdmNmmmdhhhhhhhhyyyssooossshhhhhhhhhhhyyhhhyyyyyyyyssssyysssyyhdddmNNNdhddhyyyhmmmmmdddhdhhhdNmmmdhhhdhddhhhhyysooooohhhhhhhhhhyyyyyyyyyyyyyyyyyyyyyssssyddmdddhyyhhhhddmmmmmmmddddddddmNNmddddddddhhhhyyysssoohhhhhhhhhyyyyyyyyyyssyyyyyyyyyysssyhddmmddhyyyhdmNmmmmmmmmmmmmdhddmNNmmddddhdhhhhhhyyysssohhhhhhhhyyyyysyyyssssyyyyyyyyysssssyyyyhhddhyyhdmNNmmmmmmmmmmmmdddmNNmmmmddhhhhhyhyyssossshhhhhhhhhyysssyyyyyyyyyyyysssssssssssssssyyyyhhyyhmNNmmmmmmmmmmmdhmNNNmmmddhhhhyyyssssssoohhhhhhhhhyyysyyyyyyyssssssssosssssssoooosssyyhhhyyhNMNNmmmmmmmmdmhdNNNmmmdddhhyyyysssssooohhhhhhhyyyyyyyyyhhhyssssssooooooooooosoossssyyhdhhhmMMNNNNmmNNNdmhdNMNNmmmdddhhhyyysssooss";
 
-        public String one = "X X X X X";
-        public String two = " 0 0 0 0 ";
         public bool draw = false;
+
+        public String tmp = "";
 
         public StartFrame()
         {
+            this.DoubleBuffered = true;
+
             InitializeComponent();
 
             //init arrays
@@ -76,12 +79,12 @@ namespace se.nightri.QC15_TV_Badge
 
             if (draw)
             {
-                OnDraw(one, two);
+                OnDraw(tmp);
             }
 
         }
 
-        private void OnDraw(String one, String two)
+        private void OnDraw(String layerOne)
         {
             // Gets the image from the global resources
             //Image broculoImage = global::WindowsApplication1.Properties.Resources.broculo;
@@ -99,8 +102,8 @@ namespace se.nightri.QC15_TV_Badge
             // Sets the text's font and style and draws it
             float fontSize = 16f;
             Point textPosition = new Point(50, 100);
-            DrawText(one, "Courier New", fontSize, FontStyle.Regular, Brushes.Lime, textPosition);
-            DrawText(two, "Courier New", fontSize, FontStyle.Regular, Brushes.Lime, textPosition);
+            DrawText(layerOne, "Courier New", fontSize, FontStyle.Regular, Brushes.Lime, textPosition, 1220, 1000);
+            //DrawText(two, "Courier New", fontSize, FontStyle.Regular, Brushes.Lime, textPosition);
         }
 
         protected override CreateParams CreateParams
@@ -149,20 +152,40 @@ namespace se.nightri.QC15_TV_Badge
 
             
 
-            draw = true;
+            draw = false;
 
         }
 
         private void HeavyOperation()
         {
             // Example heavy operation
-            for (int i = 0; i <= 999999; i++)
+            for (int i = 0; i <=3; i++)
             {
                 // Check if Stop button was clicked
                 if (!this.stopProcess)
                 {
                     // Show progress
-                    this.Invoke(this.updateStatusDelegate);
+                    if(i == 3)
+                    {
+                        tmp = dcrStrS + i;
+                        i = 0;
+                    } else
+                    if(i == 2)
+                    {
+                        tmp = keyStrS + i;
+                    } else
+                    if (i == 1)
+                    {
+                        tmp = encStrS + i;
+                    }
+                    else
+                    {
+                        tmp = i.ToString();
+                    }
+
+                    Thread.Sleep(1000);
+                    //this.Invoke(this.updateStatusDelegate);
+                    Invalidate();
                 }
                 else
                 {
@@ -174,65 +197,48 @@ namespace se.nightri.QC15_TV_Badge
 
         private void UpdateStatus()
         {
-            Invalidate();
-            one += "*";
+            //one += "*";
         }
 
 
-        #region DrawText helper functions
 
-        protected void DrawText(string text, Point position)
-        {
-            DrawText(this.graphics, text, "Microsoft Sans Serif", 8.25f
-                , FontStyle.Regular, Brushes.Black, position);
-        }
 
-        protected void DrawText(string text, Brush color, Point position)
-        {
-            DrawText(this.graphics, text, "Microsoft Sans Serif", 8.25f
-                , FontStyle.Regular, color, position);
-        }
 
-        protected void DrawText(string text, FontStyle style, Point position)
-        {
-            DrawText(this.graphics, text, "Microsoft Sans Serif", 8.25f
-                , style, Brushes.Black, position);
-        }
-
-        protected void DrawText(string text, FontStyle style, Brush color, Point position)
-        {
-            DrawText(this.graphics, text, "Microsoft Sans Serif", 8.25f
-                , style, color, position);
-        }
-
-        protected void DrawText(string text, float fontSize, FontStyle style, Brush color
-            , Point position)
-        {
-            DrawText(this.graphics, text, "Microsoft Sans Serif", fontSize
-                , style, color, position);
-        }
 
         protected void DrawText(string text, string fontFamily, float fontSize
             , FontStyle style, Brush color, Point position)
         {
-            DrawText(this.graphics, text, fontFamily, fontSize, style, color, position);
-        }
-
-        static public void DrawText(Graphics graphics, string text, string fontFamily
-            , float fontSize, FontStyle style, Brush color, Point position)
-        {
             Font font = new Font(fontFamily, fontSize, style);
-
             SizeF textSizeF = graphics.MeasureString(text, font);
             int width = (int)Math.Ceiling(textSizeF.Width);
             int height = (int)Math.Ceiling(textSizeF.Height);
             Size textSize = new Size(width, height);
             Rectangle rectangle = new Rectangle(position, textSize);
 
+
+            DrawText(this.graphics, text, color, rectangle, font);
+        }
+
+        protected void DrawText(string text, string fontFamily, float fontSize
+            , FontStyle style, Brush color, Point position, int width, int height)
+        {
+            Font font = new Font(fontFamily, fontSize, style);
+            SizeF textSizeF = graphics.MeasureString(text, font);
+            //int width = (int)Math.Ceiling(textSizeF.Width);
+            //int height = (int)Math.Ceiling(textSizeF.Height);
+            Size textSize = new Size(width, height);
+            Rectangle rectangle = new Rectangle(position, textSize);
+
+
+            DrawText(this.graphics, text, color, rectangle, font);
+        }
+
+        static public void DrawText(Graphics graphics, string text, Brush color, Rectangle rectangle, Font font)
+        {
             graphics.DrawString(text, font, color, rectangle);
         }
 
-        #endregion
+
 
     }
 }
