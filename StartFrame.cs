@@ -43,6 +43,12 @@ namespace se.nightri.QC15_TV_Badge
         public bool[] badgeFeed = new bool[2880];
 
         public bool[] stateSix = new bool[2880];
+        public bool[] stateFive = new bool[2880];
+        public bool[] stateFour = new bool[2880];
+        public bool[] stateThree = new bool[2880];
+        public bool[] stateTwo = new bool[2880];
+        public bool[] stateOne = new bool[2880];
+        public bool[] stateZero = new bool[2880];
 
 
 
@@ -71,13 +77,10 @@ namespace se.nightri.QC15_TV_Badge
             dcrStr = dcrStrS.ToCharArray();
             keyStr = keyStrS.ToCharArray();
 
-            Random gen = new Random();
-
-            for (int i = 0; i < badgeFeed.Length; i++)
+            for (int i = 0; i < stateZero.Length; i++)
             {
-                badgeFeed[i] = (gen.NextDouble() < 0.2); //20% random
+                stateZero[i] = true;
             }
-
 
             //baseEncLayer.Text = encStrS;
 
@@ -171,14 +174,106 @@ namespace se.nightri.QC15_TV_Badge
             // Example heavy operation
             while(true)
             {
+
+                Random gen = new Random();
+                for (int i = 0; i < badgeFeed.Length; i++)
+                {
+                    badgeFeed[i] = (gen.NextDouble() < 0.002); //20% random
+                }
+
+
                 // Check if Stop button was clicked
                 if (!this.stopProcess)
                 {
                     // Show progress
 
-                    for(int i = 0; i < layerZero.Length; i++)
+                    for(int i = 0; i < layerSix.Length; i++)
                     {
-                        layerZero[i] = encStr[i];
+                        if (badgeFeed[i] == true && stateSix[i] == false && stateFive[i] == false && stateFour[i] == false && stateThree[i] == false && stateTwo[i] == false && stateOne[i] == false && stateZero[i] == true)
+                        {
+                            layerSix[i] = 'X';
+                        }
+                        else
+                        {
+                            layerSix[i] = ' ';
+                        }
+                    }
+                    for (int i = 0; i < layerFive.Length; i++)
+                    {
+                        if (stateSix[i] == true && stateFive[i] == false && stateFour[i] == false && stateThree[i] == false && stateTwo[i] == false && stateOne[i] == false && stateZero[i] == false)
+                        {
+                            layerFive[i] = 'X';
+                        }
+                        else
+                        {
+                            layerFive[i] = ' ';
+                        }
+                    }
+                    for (int i = 0; i < layerFour.Length; i++)
+                    {
+                        if (stateSix[i] == false && stateFive[i] == true && stateFour[i] == false && stateThree[i] == false && stateTwo[i] == false && stateOne[i] == false && stateZero[i] == false)
+                        {
+                            layerFour[i] = 'X';
+                        }
+                        else
+                        {
+                            layerFour[i] = ' ';
+                        }
+                    }
+                    for (int i = 0; i < layerThree.Length; i++)
+                    {
+                        if (stateSix[i] == false && stateFive[i] == false && stateFour[i] == true && stateThree[i] == false && stateTwo[i] == false && stateOne[i] == false && stateZero[i] == false)
+                        {
+                            layerThree[i] = 'X';
+                        }
+                        else
+                        {
+                            layerThree[i] = ' ';
+                        }
+                    }
+                    for (int i = 0; i < layerTwo.Length; i++)
+                    {
+                        if (stateSix[i] == false && stateFive[i] == false && stateFour[i] == false && stateThree[i] == true && stateTwo[i] == false && stateOne[i] == false && stateZero[i] == false)
+                        {
+                            layerTwo[i] = 'X';
+                        }
+                        else
+                        {
+                            layerTwo[i] = ' ';
+                        }
+                    }
+                    for (int i = 0; i < layerOne.Length; i++)
+                    {
+                        if (badgeFeed[i] == true && stateSix[i] == false && stateFive[i] == false && stateFour[i] == false && stateThree[i] == false && stateTwo[i] == false && stateZero[i] == false)
+                        {
+                            layerOne[i] = 'X';
+                            stateOne[i] = true;
+
+                        }
+                        else
+                        {
+                            stateOne[i] = false;
+                            layerOne[i] = ' ';
+                        }
+                    }
+                    for (int i = 0; i < layerZero.Length; i++)
+                    {
+
+                        if(badgeFeed[i] == true && stateSix[i] == false && stateFive[i] == false && stateFour[i] == false && stateThree[i] == false && stateTwo[i] == false && stateOne[i] == false && stateZero[i] == true)
+                        {
+                            stateSix[i] = true;
+                        }
+                        else
+                        {
+                            stateSix[i] = false;
+                        }
+                        
+
+                        stateTwo[i] = stateThree[i];
+                        stateThree[i] = stateFour[i];
+                        stateFour[i] = stateFive[i];
+                        stateFive[i] = stateSix[i];
+                            
                     }
 
 
