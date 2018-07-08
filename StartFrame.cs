@@ -111,12 +111,18 @@ namespace se.nightri.QC15_TV_Badge
             float fontSize = 16f;
             Point textPosition = new Point(50, 100);
             DrawText(new string(layerZero), "Courier New", fontSize, FontStyle.Regular, Brushes.Lime, textPosition, 1200, 1000); //Encrypted
+            //textPosition = new Point(50, 200);
             DrawText(new string(layerOne), "Courier New", fontSize, FontStyle.Regular, Brushes.Red, textPosition, 1200, 1000); //Decyrpted - non transition
+            //textPosition = new Point(50, 300);
             DrawText(new string(layerTwo), "Courier New", fontSize, FontStyle.Regular, Brushes.OrangeRed, textPosition, 1200, 1000); // code + transition forth
+            //textPosition = new Point(50, 400);
             DrawText(new string(layerThree), "Courier New", fontSize, FontStyle.Regular, Brushes.Orange, textPosition, 1200, 1000); // code + transition third
+            //textPosition = new Point(50, 500);
             DrawText(new string(layerFour), "Courier New", fontSize, FontStyle.Regular, Brushes.YellowGreen, textPosition, 1200, 1000); // code + transition second
+            //textPosition = new Point(50, 600);
             DrawText(new string(layerFive), "Courier New", fontSize, FontStyle.Regular, Brushes.Yellow, textPosition, 1200, 1000); // code + transition first
-            DrawText(new string(layerSix), "Courier New", fontSize, FontStyle.Regular, Brushes.AliceBlue, textPosition, 1200, 1000); //xor 
+            //textPosition = new Point(50, 700);
+            DrawText(new string(layerSix), "Courier New", fontSize, FontStyle.Regular, Brushes.White, textPosition, 1200, 1000); //xor 
         }
         
         protected override CreateParams CreateParams
@@ -171,128 +177,160 @@ namespace se.nightri.QC15_TV_Badge
 
         private void HeavyOperation()
         {
-            int n = 0;
             // Example heavy operation
-            while(true)
+            while (true)
             {
-                
+
                 Random gen = new Random();
                 for (int i = 0; i < badgeFeed.Length; i++)
                 {
-                    badgeFeed[i] = (gen.NextDouble() < 0.002); //20% random
+                    if (gen.NextDouble() < 0.02)
+                        if (badgeFeed[i] == true)
+                        {
+                            badgeFeed[i] = false;
+                        }
+                        else
+                        {
+                            badgeFeed[i] = true;
+                        }
+                    //Console.WriteLine(badgeFeed[i]);      
                 }
+
 
 
                 // Check if Stop button was clicked
                 if (!this.stopProcess)
                 {
                     // Show progress
-                    
-                    for(int i = 0; i < layerSix.Length; i++)
+
+                    for (int i = 0; i < badgeFeed.Length; i++)
                     {
-                        if (badgeFeed[i] == true && stateSix[i] == false && stateFive[i] == false && stateFour[i] == false && stateThree[i] == false && stateTwo[i] == false && stateOne[i] == false && stateZero[i] == true)
+                        // LAYER SIX FOR BRAND NEW CHARACTERS
+                        if (badgeFeed[i] == true && stateZero[i] == true)
                         {
+                            // Character previously off, now turned on.
+                            // TODO: Set stateZero[i] to false
+                            // TODO: Set stateSix[i] to true
                             layerSix[i] = 'X';
+                            layerFive[i] = ' ';
+                            layerFour[i] = ' ';
+                            layerThree[i] = ' ';
+                            layerTwo[i] = ' ';
+                            layerOne[i] = ' ';
+                            layerZero[i] = ' ';
+                        }
+                        else if (stateSix[i] == true)
+                        {
+                            layerSix[i] = ' ';
+                            layerFive[i] = 'X';
+                            layerFour[i] = ' ';
+                            layerThree[i] = ' ';
+                            layerTwo[i] = ' ';
+                            layerOne[i] = ' ';
+                            layerZero[i] = ' ';
+                        }
+                        else if (stateFive[i] == true)
+                        {
+                            layerSix[i] = ' ';
+                            layerFive[i] = ' ';
+                            layerFour[i] = 'X';
+                            layerThree[i] = ' ';
+                            layerTwo[i] = ' ';
+                            layerOne[i] = ' ';
+                            layerZero[i] = ' ';
+                        }
+                        else if (stateFour[i] == true)
+                        {
+                            layerSix[i] = ' ';
+                            layerFive[i] = ' ';
+                            layerFour[i] = ' ';
+                            layerThree[i] = 'X';
+                            layerTwo[i] = ' ';
+                            layerOne[i] = ' ';
+                            layerZero[i] = ' ';
+                        }
+                        else if (stateThree[i] == true)
+                        {
+                            layerSix[i] = ' ';
+                            layerFive[i] = ' ';
+                            layerFour[i] = ' ';
+                            layerThree[i] = ' ';
+                            layerTwo[i] = 'X';
+                            layerOne[i] = ' ';
+                            layerZero[i] = ' ';
+                        }
+                        else if (stateTwo[i] == true)
+                        {
+                            layerSix[i] = ' ';
+                            layerFive[i] = ' ';
+                            layerFour[i] = ' ';
+                            layerThree[i] = ' ';
+                            layerTwo[i] = ' ';
+                            layerOne[i] = 'X';
+                            layerZero[i] = ' ';
+                        }
+                        // LAYER ONE FOR ALL ENABLED CHARACTERS NOT ELSEWHERE SHOWN
+                        else if (stateOne[i] == true && badgeFeed[i] == true)
+                        {
+                            layerSix[i] = ' ';
+                            layerFive[i] = ' ';
+                            layerFour[i] = ' ';
+                            layerThree[i] = ' ';
+                            layerTwo[i] = ' ';
+                            layerOne[i] = 'X';
+                            layerZero[i] = ' ';
                         }
                         else
                         {
                             layerSix[i] = ' ';
-                        }
-                    }
-                    for (int i = 0; i < layerFive.Length; i++)
-                    {
-                        if (stateSix[i] == true && stateFive[i] == false && stateFour[i] == false && stateThree[i] == false && stateTwo[i] == false && stateOne[i] == false && stateZero[i] == false)
-                        {
-                            layerFive[i] = 'X';
-                        }
-                        else
-                        {
                             layerFive[i] = ' ';
-                        }
-                    }
-                    for (int i = 0; i < layerFour.Length; i++)
-                    {
-                        if (stateSix[i] == false && stateFive[i] == true && stateFour[i] == false && stateThree[i] == false && stateTwo[i] == false && stateOne[i] == false && stateZero[i] == false)
-                        {
-                            layerFour[i] = 'X';
-                        }
-                        else
-                        {
                             layerFour[i] = ' ';
-                        }
-                    }
-                    for (int i = 0; i < layerThree.Length; i++)
-                    {
-                        if (stateSix[i] == false && stateFive[i] == false && stateFour[i] == true && stateThree[i] == false && stateTwo[i] == false && stateOne[i] == false && stateZero[i] == false)
-                        {
-                            layerThree[i] = 'X';
-                        }
-                        else
-                        {
                             layerThree[i] = ' ';
-                        }
-                    }
-                    for (int i = 0; i < layerTwo.Length; i++)
-                    {
-                        if (stateSix[i] == false && stateFive[i] == false && stateFour[i] == false && stateThree[i] == true && stateTwo[i] == false && stateOne[i] == false && stateZero[i] == false)
-                        {
-                            layerTwo[i] = 'X';
-                        }
-                        else
-                        {
                             layerTwo[i] = ' ';
+                            layerOne[i] = ' ';
+                            layerZero[i] = 'X';
                         }
-                    }
-                    for (int i = 0; i < layerOne.Length; i++)
+                    }// All done with display, now we need to catch up all our states
+                    for (int i = 0; i < badgeFeed.Length; i++)
                     {
-                        if (badgeFeed[i] == true && stateSix[i] == false && stateFive[i] == false && stateFour[i] == false && stateThree[i] == false && stateTwo[i] == false && stateZero[i] == false)
+                        if (stateSix[i] == true)
                         {
-                            layerOne[i] = 'X';
-                            stateOne[i] = true;
-
+                            stateSix[i] = false;
+                            stateFive[i] = true;
                         }
-                        else
+                        else if (stateFive[i] == true)
+                        {
+                            stateFive[i] = false;
+                            stateFour[i] = true;
+                        }
+                        else if (stateFour[i] == true)
+                        {
+                            stateFour[i] = false;
+                            stateThree[i] = true;
+                        }
+                        else if (stateThree[i] == true)
+                        {
+                            stateThree[i] = false;
+                            stateTwo[i] = true;
+                        }
+                        else if (stateTwo[i] == true)
+                        {
+                            stateTwo[i] = false;
+                            stateOne[i] = true;
+                        }
+                        else if (badgeFeed[i] == true && stateZero[i] == true)
+                        {
+                            stateSix[i] = true;
+                            stateZero[i] = false;
+                        }
+                        else if (badgeFeed[i] == false && stateOne[i] == true) // Finished the loop but character turned off
                         {
                             stateOne[i] = false;
-                            layerOne[i] = ' ';
-                        }
-                    }
-                    for (int i = 0; i < layerZero.Length; i++)
-                    {
-                        if (badgeFeed[i])
-                        {
-                            Console.WriteLine("b: " + n + " : " + i);
-                        }
-                        if (stateSix[i])
-                        {
-                            Console.WriteLine("6: " + n + " : " + i);
-                        }
-                        if (stateFive[i])
-                        {
-                            Console.WriteLine("5: " + n + " : " + i);
-                        }
-                        
-                        if(badgeFeed[i] == true && stateSix[i] == false && stateFive[i] == false && stateFour[i] == false && stateThree[i] == false && stateTwo[i] == false && stateOne[i] == false && stateZero[i] == true)
-                        {
-                            stateSix[i] = badgeFeed[i];
-                            Console.WriteLine("b->6: " + n + " : " + i);
-                        }
-
-                        stateFive[i] = stateSix[i];
-
-                        if (stateSix[i])
-                        {
-                            Console.WriteLine("6a: " + n + " : " + i);
-                        }
-                        if (stateFive[i])
-                        {
-                            Console.WriteLine("5a: " + n + " : " + i);
+                            stateZero[i] = true;
                         }
                     }
 
-                    Console.WriteLine("-------------------------------------------");
-
-                    Thread.Sleep(1000);
+                    Thread.Sleep(200);
                     //this.Invoke(this.updateStatusDelegate);
                     Invalidate();
                 }
@@ -301,8 +339,7 @@ namespace se.nightri.QC15_TV_Badge
                     // Stop heavy operation
                     this.workerThread.Abort();
                 }
-
-                n++;
+                //Console.WriteLine("-------------------------");
             }
         }
 
