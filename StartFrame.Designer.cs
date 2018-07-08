@@ -38,6 +38,7 @@ namespace se.nightri.QC15_TV_Badge
             this.btnRestore = new System.Windows.Forms.Button();
             this.headingCenter = new System.Windows.Forms.Label();
             this.serialPortRead = new System.IO.Ports.SerialPort(this.components);
+            this.btnWindow = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnFullScreen
@@ -46,7 +47,7 @@ namespace se.nightri.QC15_TV_Badge
             this.btnFullScreen.Name = "btnFullScreen";
             this.btnFullScreen.Size = new System.Drawing.Size(75, 23);
             this.btnFullScreen.TabIndex = 0;
-            this.btnFullScreen.Text = "&Start";
+            this.btnFullScreen.Text = "&Full Screen";
             this.btnFullScreen.UseVisualStyleBackColor = true;
             this.btnFullScreen.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -75,6 +76,16 @@ namespace se.nightri.QC15_TV_Badge
             this.headingCenter.Text = "QC15 Badge Game";
             this.headingCenter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnWindow
+            // 
+            this.btnWindow.Location = new System.Drawing.Point(174, 12);
+            this.btnWindow.Name = "btnWindow";
+            this.btnWindow.Size = new System.Drawing.Size(75, 23);
+            this.btnWindow.TabIndex = 5;
+            this.btnWindow.Text = "&Windowed";
+            this.btnWindow.UseVisualStyleBackColor = true;
+            this.btnWindow.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // StartFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -82,6 +93,7 @@ namespace se.nightri.QC15_TV_Badge
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnRestore;
             this.ClientSize = new System.Drawing.Size(1367, 1043);
+            this.Controls.Add(this.btnWindow);
             this.Controls.Add(this.btnFullScreen);
             this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.headingCenter);
@@ -99,6 +111,7 @@ namespace se.nightri.QC15_TV_Badge
         private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.Label headingCenter;
         private System.IO.Ports.SerialPort serialPortRead;
+        private System.Windows.Forms.Button btnWindow;
     }
 }
 
