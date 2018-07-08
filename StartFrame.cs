@@ -171,10 +171,11 @@ namespace se.nightri.QC15_TV_Badge
 
         private void HeavyOperation()
         {
+            int n = 0;
             // Example heavy operation
             while(true)
             {
-
+                
                 Random gen = new Random();
                 for (int i = 0; i < badgeFeed.Length; i++)
                 {
@@ -186,7 +187,7 @@ namespace se.nightri.QC15_TV_Badge
                 if (!this.stopProcess)
                 {
                     // Show progress
-
+                    
                     for(int i = 0; i < layerSix.Length; i++)
                     {
                         if (badgeFeed[i] == true && stateSix[i] == false && stateFive[i] == false && stateFour[i] == false && stateThree[i] == false && stateTwo[i] == false && stateOne[i] == false && stateZero[i] == true)
@@ -258,24 +259,38 @@ namespace se.nightri.QC15_TV_Badge
                     }
                     for (int i = 0; i < layerZero.Length; i++)
                     {
-
-                        if(badgeFeed[i] == true && stateSix[i] == false && stateFive[i] == false && stateFour[i] == false && stateThree[i] == false && stateTwo[i] == false && stateOne[i] == false && stateZero[i] == true)
+                        if (badgeFeed[i])
                         {
-                            stateSix[i] = true;
+                            Console.WriteLine("b: " + n + " : " + i);
                         }
-                        else
+                        if (stateSix[i])
                         {
-                            stateSix[i] = false;
+                            Console.WriteLine("6: " + n + " : " + i);
+                        }
+                        if (stateFive[i])
+                        {
+                            Console.WriteLine("5: " + n + " : " + i);
                         }
                         
+                        if(badgeFeed[i] == true && stateSix[i] == false && stateFive[i] == false && stateFour[i] == false && stateThree[i] == false && stateTwo[i] == false && stateOne[i] == false && stateZero[i] == true)
+                        {
+                            stateSix[i] = badgeFeed[i];
+                            Console.WriteLine("b->6: " + n + " : " + i);
+                        }
 
-                        stateTwo[i] = stateThree[i];
-                        stateThree[i] = stateFour[i];
-                        stateFour[i] = stateFive[i];
                         stateFive[i] = stateSix[i];
-                            
+
+                        if (stateSix[i])
+                        {
+                            Console.WriteLine("6a: " + n + " : " + i);
+                        }
+                        if (stateFive[i])
+                        {
+                            Console.WriteLine("5a: " + n + " : " + i);
+                        }
                     }
 
+                    Console.WriteLine("-------------------------------------------");
 
                     Thread.Sleep(1000);
                     //this.Invoke(this.updateStatusDelegate);
@@ -286,6 +301,8 @@ namespace se.nightri.QC15_TV_Badge
                     // Stop heavy operation
                     this.workerThread.Abort();
                 }
+
+                n++;
             }
         }
 
