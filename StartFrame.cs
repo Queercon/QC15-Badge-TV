@@ -42,6 +42,8 @@ namespace se.nightri.QC15_TV_Badge
 
         public bool[] badgeFeed = new bool[2880];
 
+        public bool[] stateSix = new bool[2880];
+
 
 
         public static String keyStrS = "CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC#CcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcC⊕";
@@ -74,11 +76,8 @@ namespace se.nightri.QC15_TV_Badge
             for (int i = 0; i < badgeFeed.Length; i++)
             {
                 badgeFeed[i] = (gen.NextDouble() < 0.2); //20% random
-                Console.WriteLine(i + " " + badgeFeed[i]);
             }
 
-
-            
 
             //baseEncLayer.Text = encStrS;
 
@@ -99,22 +98,22 @@ namespace se.nightri.QC15_TV_Badge
 
             if (draw)
             {
-                OnDraw(layerZero.ToString(), layerOne.ToString(), layerTwo.ToString(), layerThree.ToString(), layerFour.ToString(), layerFive.ToString(), layerSix.ToString());
+                OnDraw();
             }
 
         }
 
-        private void OnDraw(String layerZero, String layerOne, String layerTwo, String layerThree, String layerFour, String layerFive, String layerSix)
+        private void OnDraw()
         {
             float fontSize = 16f;
             Point textPosition = new Point(50, 100);
-            DrawText(layerZero, "Courier New", fontSize, FontStyle.Regular, Brushes.Lime, textPosition, 1200, 1000); //Encrypted
-            DrawText(layerOne, "Courier New", fontSize, FontStyle.Regular, Brushes.Red, textPosition, 1200, 1000); //Decyrpted - non transition
-            DrawText(layerTwo, "Courier New", fontSize, FontStyle.Regular, Brushes.OrangeRed, textPosition, 1200, 1000); // code + transition forth
-            DrawText(layerThree, "Courier New", fontSize, FontStyle.Regular, Brushes.Orange, textPosition, 1200, 1000); // code + transition third
-            DrawText(layerFour, "Courier New", fontSize, FontStyle.Regular, Brushes.YellowGreen, textPosition, 1200, 1000); // code + transition second
-            DrawText(layerFive, "Courier New", fontSize, FontStyle.Regular, Brushes.Yellow, textPosition, 1200, 1000); // code + transition first
-            DrawText(layerSix, "Courier New", fontSize, FontStyle.Regular, Brushes.AliceBlue, textPosition, 1200, 1000); //xor 
+            DrawText(new string(layerZero), "Courier New", fontSize, FontStyle.Regular, Brushes.Lime, textPosition, 1200, 1000); //Encrypted
+            DrawText(new string(layerOne), "Courier New", fontSize, FontStyle.Regular, Brushes.Red, textPosition, 1200, 1000); //Decyrpted - non transition
+            DrawText(new string(layerTwo), "Courier New", fontSize, FontStyle.Regular, Brushes.OrangeRed, textPosition, 1200, 1000); // code + transition forth
+            DrawText(new string(layerThree), "Courier New", fontSize, FontStyle.Regular, Brushes.Orange, textPosition, 1200, 1000); // code + transition third
+            DrawText(new string(layerFour), "Courier New", fontSize, FontStyle.Regular, Brushes.YellowGreen, textPosition, 1200, 1000); // code + transition second
+            DrawText(new string(layerFive), "Courier New", fontSize, FontStyle.Regular, Brushes.Yellow, textPosition, 1200, 1000); // code + transition first
+            DrawText(new string(layerSix), "Courier New", fontSize, FontStyle.Regular, Brushes.AliceBlue, textPosition, 1200, 1000); //xor 
         }
         
         protected override CreateParams CreateParams
@@ -170,31 +169,20 @@ namespace se.nightri.QC15_TV_Badge
         private void HeavyOperation()
         {
             // Example heavy operation
-            for (int i = 0; i <=3; i++)
+            while(true)
             {
                 // Check if Stop button was clicked
                 if (!this.stopProcess)
                 {
                     // Show progress
-                    if(i == 3)
+
+                    for(int i = 0; i < layerZero.Length; i++)
                     {
-                        tmp = dcrStrS + i;
-                        i = 0;
-                    } else
-                    if(i == 2)
-                    {
-                        tmp = keyStrS + i;
-                    } else
-                    if (i == 1)
-                    {
-                        tmp = encStrS + i;
-                    }
-                    else
-                    {
-                        tmp = i.ToString();
+                        layerZero[i] = encStr[i];
                     }
 
-                    Thread.Sleep(2000);
+
+                    Thread.Sleep(1000);
                     //this.Invoke(this.updateStatusDelegate);
                     Invalidate();
                 }
