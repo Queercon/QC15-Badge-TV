@@ -157,7 +157,7 @@ namespace se.nightri.QC15_TV_Badge
             this.stopProcess = false;
 
             // Initialise and start worker thread
-            this.workerThread = new Thread(new ThreadStart(this.HeavyOperation));
+            this.workerThread = new Thread(new ThreadStart(this.HeavyOperationAsync));
             this.workerThread.Start();
 
         }
@@ -175,7 +175,7 @@ namespace se.nightri.QC15_TV_Badge
 
         }
 
-        private void HeavyOperation()
+        private async void HeavyOperationAsync()
         {
             // Example heavy operation
             while (true)
@@ -212,82 +212,82 @@ namespace se.nightri.QC15_TV_Badge
                             // TODO: Set stateZero[i] to false
                             // TODO: Set stateSix[i] to true
                             layerSix[i] = 'X';
-                            layerFive[i] = ' ';
-                            layerFour[i] = ' ';
-                            layerThree[i] = ' ';
-                            layerTwo[i] = ' ';
-                            layerOne[i] = ' ';
-                            layerZero[i] = ' ';
+                            layerFive[i] = '\u00A0';
+                            layerFour[i] = '\u00A0';
+                            layerThree[i] = '\u00A0';
+                            layerTwo[i] = '\u00A0';
+                            layerOne[i] = '\u00A0';
+                            layerZero[i] = '\u00A0';
                         }
                         else if (stateSix[i] == true)
                         {
-                            layerSix[i] = ' ';
+                            layerSix[i] = '\u00A0';
                             layerFive[i] = 'X';
-                            layerFour[i] = ' ';
-                            layerThree[i] = ' ';
-                            layerTwo[i] = ' ';
-                            layerOne[i] = ' ';
-                            layerZero[i] = ' ';
+                            layerFour[i] = '\u00A0';
+                            layerThree[i] = '\u00A0';
+                            layerTwo[i] = '\u00A0';
+                            layerOne[i] = '\u00A0';
+                            layerZero[i] = '\u00A0';
                         }
                         else if (stateFive[i] == true)
                         {
-                            layerSix[i] = ' ';
-                            layerFive[i] = ' ';
+                            layerSix[i] = '\u00A0';
+                            layerFive[i] = '\u00A0';
                             layerFour[i] = 'X';
-                            layerThree[i] = ' ';
-                            layerTwo[i] = ' ';
-                            layerOne[i] = ' ';
-                            layerZero[i] = ' ';
+                            layerThree[i] = '\u00A0';
+                            layerTwo[i] = '\u00A0';
+                            layerOne[i] = '\u00A0';
+                            layerZero[i] = '\u00A0';
                         }
                         else if (stateFour[i] == true)
                         {
-                            layerSix[i] = ' ';
-                            layerFive[i] = ' ';
-                            layerFour[i] = ' ';
+                            layerSix[i] = '\u00A0';
+                            layerFive[i] = '\u00A0';
+                            layerFour[i] = '\u00A0';
                             layerThree[i] = 'X';
-                            layerTwo[i] = ' ';
-                            layerOne[i] = ' ';
-                            layerZero[i] = ' ';
+                            layerTwo[i] = '\u00A0';
+                            layerOne[i] = '\u00A0';
+                            layerZero[i] = '\u00A0';
                         }
                         else if (stateThree[i] == true)
                         {
-                            layerSix[i] = ' ';
-                            layerFive[i] = ' ';
-                            layerFour[i] = ' ';
-                            layerThree[i] = ' ';
+                            layerSix[i] = '\u00A0';
+                            layerFive[i] = '\u00A0';
+                            layerFour[i] = '\u00A0';
+                            layerThree[i] = '\u00A0';
                             layerTwo[i] = 'X';
-                            layerOne[i] = ' ';
-                            layerZero[i] = ' ';
+                            layerOne[i] = '\u00A0';
+                            layerZero[i] = '\u00A0';
                         }
                         else if (stateTwo[i] == true)
                         {
-                            layerSix[i] = ' ';
-                            layerFive[i] = ' ';
-                            layerFour[i] = ' ';
-                            layerThree[i] = ' ';
-                            layerTwo[i] = ' ';
+                            layerSix[i] = '\u00A0';
+                            layerFive[i] = '\u00A0';
+                            layerFour[i] = '\u00A0';
+                            layerThree[i] = '\u00A0';
+                            layerTwo[i] = '\u00A0';
                             layerOne[i] = 'X';
-                            layerZero[i] = ' ';
+                            layerZero[i] = '\u00A0';
                         }
                         // LAYER ONE FOR ALL ENABLED CHARACTERS NOT ELSEWHERE SHOWN
                         else if (stateOne[i] == true && badgeFeed[i] == true)
                         {
-                            layerSix[i] = ' ';
-                            layerFive[i] = ' ';
-                            layerFour[i] = ' ';
-                            layerThree[i] = ' ';
-                            layerTwo[i] = ' ';
+                            layerSix[i] = '\u00A0';
+                            layerFive[i] = '\u00A0';
+                            layerFour[i] = '\u00A0';
+                            layerThree[i] = '\u00A0';
+                            layerTwo[i] = '\u00A0';
                             layerOne[i] = 'X';
-                            layerZero[i] = ' ';
+                            layerZero[i] = '\u00A0';
                         }
                         else
                         {
-                            layerSix[i] = ' ';
-                            layerFive[i] = ' ';
-                            layerFour[i] = ' ';
-                            layerThree[i] = ' ';
-                            layerTwo[i] = ' ';
-                            layerOne[i] = ' ';
+                            layerSix[i] = '\u00A0';
+                            layerFive[i] = '\u00A0';
+                            layerFour[i] = '\u00A0';
+                            layerThree[i] = '\u00A0';
+                            layerTwo[i] = '\u00A0';
+                            layerOne[i] = '\u00A0';
                             layerZero[i] = 'X';
                         }
                     }// All done with display, now we need to catch up all our states
@@ -330,9 +330,12 @@ namespace se.nightri.QC15_TV_Badge
                         }
                     }
 
-                    Thread.Sleep(200);
                     //this.Invoke(this.updateStatusDelegate);
                     Invalidate();
+                    await Task.Delay(200);
+
+                    
+                    
                 }
                 else
                 {
@@ -345,7 +348,7 @@ namespace se.nightri.QC15_TV_Badge
 
         private void UpdateStatus()
         {
-            //one += "*";
+            
         }
 
 

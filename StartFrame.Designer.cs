@@ -81,7 +81,7 @@ namespace se.nightri.QC15_TV_Badge
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnRestore;
-            this.ClientSize = new System.Drawing.Size(1367, 834);
+            this.ClientSize = new System.Drawing.Size(1367, 1043);
             this.Controls.Add(this.btnFullScreen);
             this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.headingCenter);
