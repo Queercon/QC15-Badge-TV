@@ -150,7 +150,7 @@ namespace se.nightri.QC15_TV_Badge
         {
             formState.Maximize(this);
             btnFullScreen.Hide();
-            btnRestore.Hide();
+            //btnRestore.Hide();
             btnWindow.Hide();
 
             draw = true;
