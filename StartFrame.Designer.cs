@@ -39,7 +39,7 @@ namespace se.nightri.QC15_TV_Badge
             this.headingCenter = new System.Windows.Forms.Label();
             this.serialPortRead = new System.IO.Ports.SerialPort(this.components);
             this.btnWindow = new System.Windows.Forms.Button();
-            this.sql = new System.Windows.Forms.Button();
+            this.btnSql = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnFullScreen
@@ -87,15 +87,15 @@ namespace se.nightri.QC15_TV_Badge
             this.btnWindow.UseVisualStyleBackColor = true;
             this.btnWindow.Click += new System.EventHandler(this.button1_Click_2);
             // 
-            // sql
+            // btnSql
             // 
-            this.sql.Location = new System.Drawing.Point(299, 12);
-            this.sql.Name = "sql";
-            this.sql.Size = new System.Drawing.Size(75, 23);
-            this.sql.TabIndex = 6;
-            this.sql.Text = "SQL";
-            this.sql.UseVisualStyleBackColor = true;
-            this.sql.Click += new System.EventHandler(this.sql_Click);
+            this.btnSql.Location = new System.Drawing.Point(299, 12);
+            this.btnSql.Name = "btnSql";
+            this.btnSql.Size = new System.Drawing.Size(75, 23);
+            this.btnSql.TabIndex = 6;
+            this.btnSql.Text = "Test SQL";
+            this.btnSql.UseVisualStyleBackColor = true;
+            this.btnSql.Click += new System.EventHandler(this.sql_Click);
             // 
             // StartFrame
             // 
@@ -104,7 +104,7 @@ namespace se.nightri.QC15_TV_Badge
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnRestore;
             this.ClientSize = new System.Drawing.Size(1367, 1043);
-            this.Controls.Add(this.sql);
+            this.Controls.Add(this.btnSql);
             this.Controls.Add(this.btnWindow);
             this.Controls.Add(this.btnFullScreen);
             this.Controls.Add(this.btnRestore);
@@ -124,7 +124,7 @@ namespace se.nightri.QC15_TV_Badge
         private System.Windows.Forms.Label headingCenter;
         private System.IO.Ports.SerialPort serialPortRead;
         private System.Windows.Forms.Button btnWindow;
-        private System.Windows.Forms.Button sql;
+        private System.Windows.Forms.Button btnSql;
     }
 }
 

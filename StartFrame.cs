@@ -27,6 +27,8 @@ namespace se.nightri.QC15_TV_Badge
         private delegate void UpdateStatusDelegate();
         private UpdateStatusDelegate updateStatusDelegate = null;
 
+        private String sqlcon = "server=103.47.62.133;database=badge;UID=tv;password=2az8wA4LxuQRIIH9";
+
 
 
         public char[] encStr = new Char[2880];
@@ -153,6 +155,7 @@ namespace se.nightri.QC15_TV_Badge
             btnFullScreen.Hide();
             //btnRestore.Hide();
             btnWindow.Hide();
+            btnSql.Hide();
 
             draw = true;
 
@@ -171,6 +174,7 @@ namespace se.nightri.QC15_TV_Badge
             btnFullScreen.Show();
             btnRestore.Show();
             btnWindow.Show();
+            btnSql.Show();
 
 
 
@@ -183,6 +187,7 @@ namespace se.nightri.QC15_TV_Badge
             btnFullScreen.Hide();
             btnRestore.Hide();
             btnWindow.Hide();
+            btnSql.Hide();
 
             draw = true;
 
@@ -409,13 +414,12 @@ namespace se.nightri.QC15_TV_Badge
         {
             try
             {
-                String str = "server=103.47.62.133;database=badge;UID=tv;password=2az8wA4LxuQRIIH9";
                 String query = "select * from badges";
-                SqlConnection con = new SqlConnection(str);
+                SqlConnection con = new SqlConnection(sqlcon);
                 SqlCommand cmd = new SqlCommand(query, con);
                 con.Open();
                 DataSet ds = new DataSet();
-                MessageBox.Show("connect with sql server");
+                MessageBox.Show("connected with sql server");
                 con.Close();
             }
             catch (Exception es)
