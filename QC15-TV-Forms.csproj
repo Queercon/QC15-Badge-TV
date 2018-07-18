@@ -23,13 +23,13 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
     <InstallUrl>https://qc15-badge-tv.woofy.io/</InstallUrl>
-    <UpdateUrl>https://qc15.woofy.io/</UpdateUrl>
+    <UpdateUrl>https://qc15-badge-tv.woofy.io/</UpdateUrl>
     <ProductName>QC15 TV Badge</ProductName>
     <PublisherName>NightRise LLC</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>26</ApplicationRevision>
+    <ApplicationRevision>27</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

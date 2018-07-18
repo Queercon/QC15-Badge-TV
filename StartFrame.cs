@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 using se.nightri.QC15_TV_Badge;
 
@@ -404,6 +405,24 @@ namespace se.nightri.QC15_TV_Badge
             graphics.DrawString(text, font, color, rectangle);
         }
 
+        private void sql_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String str = "server=103.47.62.133;database=badge;UID=tv;password=2az8wA4LxuQRIIH9";
+                String query = "select * from badges";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                con.Open();
+                DataSet ds = new DataSet();
+                MessageBox.Show("connect with sql server");
+                con.Close();
+            }
+            catch (Exception es)
+            {
+                MessageBox.Show(es.Message);
 
+            }
+        }
     }
 }
