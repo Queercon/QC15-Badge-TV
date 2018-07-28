@@ -287,7 +287,7 @@ namespace se.nightri.QC15_TV_Badge
                             layerFour[i] = '\u00A0';
                             layerThree[i] = '\u00A0';
                             layerTwo[i] = '\u00A0';
-                            layerOne[i] = encStr[i];
+                            layerOne[i] = dcrStr[i];
                             layerZero[i] = '\u00A0';
                         }
                         // LAYER ONE FOR ALL ENABLED CHARACTERS NOT ELSEWHERE SHOWN
