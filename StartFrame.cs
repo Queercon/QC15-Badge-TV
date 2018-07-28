@@ -106,8 +106,8 @@ namespace se.nightri.QC15_TV_Badge
 
         private void OnDraw()
         {
-            float fontSize = 12f;
-            int fWidth = 1200;
+            float fontSize = 9.5f;
+            int fWidth = 950;
             int fHight = 2000;
             Point textPosition = new Point(50, 100);
             DrawText(new string(layerZero), "Courier New", fontSize, FontStyle.Regular, Brushes.DimGray, textPosition, fWidth, fHight); //Encrypted

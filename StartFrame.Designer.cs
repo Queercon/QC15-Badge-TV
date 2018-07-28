@@ -72,7 +72,7 @@ namespace se.nightri.QC15_TV_Badge
             this.headingCenter.ForeColor = System.Drawing.Color.Lime;
             this.headingCenter.Location = new System.Drawing.Point(0, 0);
             this.headingCenter.Name = "headingCenter";
-            this.headingCenter.Size = new System.Drawing.Size(1367, 39);
+            this.headingCenter.Size = new System.Drawing.Size(1904, 39);
             this.headingCenter.TabIndex = 4;
             this.headingCenter.Text = "QC15 Badge Game";
             this.headingCenter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -103,7 +103,7 @@ namespace se.nightri.QC15_TV_Badge
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnRestore;
-            this.ClientSize = new System.Drawing.Size(1367, 1043);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.btnSql);
             this.Controls.Add(this.btnWindow);
             this.Controls.Add(this.btnFullScreen);
