@@ -205,10 +205,10 @@ namespace se.nightri.QC15_TV_Badge
                 Random gen = new Random();
                 for (int i = 0; i < badgeFeed.Length; i++)
                 {
-                    if (gen.NextDouble() < 1.00)
+                    if (gen.NextDouble() < 0.02)
                         if (badgeFeed[i] == true)
                         {
-                            badgeFeed[i] = true;
+                            badgeFeed[i] = false;
                         }
                         else
                         {
@@ -353,7 +353,7 @@ namespace se.nightri.QC15_TV_Badge
 
                     //this.Invoke(this.updateStatusDelegate);
                     Invalidate();
-                    await Task.Delay(1000);
+                    await Task.Delay(200);
 
                     
                     
