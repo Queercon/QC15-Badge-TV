@@ -1,12 +1,13 @@
 USE [badge]
 GO
 
-/****** Object:  StoredProcedure [dbo].[getOr]    Script Date: 7/28/2018 4:57:17 PM ******/
+/****** Object:  StoredProcedure [dbo].[getOr]    Script Date: 7/29/2018 1:38:16 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 -- =============================================
 -- Author:		<Author,,Name>
@@ -24,6 +25,8 @@ BEGIN
     -- Insert statements for procedure here
 
 DECLARE @tmp binary(960) = 0;
+DECLARE @rtn binary(960) = 0;
+DECLARE @data VARCHAR(max) = null;
 
 DECLARE 	@rtn0	binary(8) = 0;
 DECLARE 	@rtn1	binary(8) = 0;
@@ -158,6 +161,7 @@ FOR
 
 SELECT [0] + [1] + [2] + [3] + [4] + [5] + [6] + [7] + [8] + [9] + [10] + [11] + [12] + [13] + [14] + [15] + [16] + [17] + [18] + [19] + [20] + [21] + [22] + [23] + [24] + [25] + [26] + [27] + [28] + [29] + [30] + [31] + [32] + [33] + [34] + [35] + [36] + [37] + [38] + [39] + [40] + [41] + [42] + [43] + [44] + [45] + [46] + [47] + [48] + [49] + [50] + [51] + [52] + [53] + [54] + [55] + [56] + [57] + [58] + [59] + [60] + [61] + [62] + [63] + [64] + [65] + [66] + [67] + [68] + [69] + [70] + [71] + [72] + [73] + [74] + [75] + [76] + [77] + [78] + [79] + [80] + [81] + [82] + [83] + [84] + [85] + [86] + [87] + [88] + [89] + [90] + [91] + [92] + [93] + [94] + [95]
  FROM [badge].[dbo].[badges]
+ WHERE [lastseen] >= DATEADD(s, -30, SYSDATETIME())
 
 OPEN badge_cursor
 
@@ -412,9 +416,20 @@ WHILE @@FETCH_STATUS = 0
 		SET @rtn119 =  CAST((SUBSTRING(@tmp, 953, 960) | cast(@rtn119 as BIGINT)) AS BINARY(8))
 		
 	END
-RETURN CAST(@rtn0 +  @rtn1 +  @rtn2 +  @rtn3 +  @rtn4 +  @rtn5 +  @rtn6 +  @rtn7 +  @rtn8 +  @rtn9 +  @rtn10 +  @rtn11 +  @rtn12 +  @rtn13 +  @rtn14 +  @rtn15 +  @rtn16 +  @rtn17 +  @rtn18 +  @rtn19 +  @rtn20 +  @rtn21 +  @rtn22 +  @rtn23 +  @rtn24 +  @rtn25 +  @rtn26 +  @rtn27 +  @rtn28 +  @rtn29 +  @rtn30 +  @rtn31 +  @rtn32 +  @rtn33 +  @rtn34 +  @rtn35 +  @rtn36 +  @rtn37 +  @rtn38 +  @rtn39 +  @rtn40 +  @rtn41 +  @rtn42 +  @rtn43 +  @rtn44 +  @rtn45 +  @rtn46 +  @rtn47 +  @rtn48 +  @rtn49 +  @rtn50 +  @rtn51 +  @rtn52 +  @rtn53 +  @rtn54 +  @rtn55 +  @rtn56 +  @rtn57 +  @rtn58 +  @rtn59 +  @rtn60 +  @rtn61 +  @rtn62 +  @rtn63 +  @rtn64 +  @rtn65 +  @rtn66 +  @rtn67 +  @rtn68 +  @rtn69 +  @rtn70 +  @rtn71 +  @rtn72 +  @rtn73 +  @rtn74 +  @rtn75 +  @rtn76 +  @rtn77 +  @rtn78 +  @rtn79 +  @rtn80 +  @rtn81 +  @rtn82 +  @rtn83 +  @rtn84 +  @rtn85 +  @rtn86 +  @rtn87 +  @rtn88 +  @rtn89 +  @rtn90 +  @rtn91 +  @rtn92 +  @rtn93 +  @rtn94 +  @rtn95 +  @rtn96 +  @rtn97 +  @rtn98 +  @rtn99 +  @rtn100 +  @rtn101 +  @rtn102 +  @rtn103 +  @rtn104 +  @rtn105 +  @rtn106 +  @rtn107 +  @rtn108 +  @rtn109 +  @rtn110 +  @rtn111 +  @rtn112 +  @rtn113 +  @rtn114 +  @rtn115 +  @rtn116 +  @rtn117 +  @rtn118 +  @rtn119 AS BINARY(960))
+
+SET @rtn = CAST(@rtn0 +  @rtn1 +  @rtn2 +  @rtn3 +  @rtn4 +  @rtn5 +  @rtn6 +  @rtn7 +  @rtn8 +  @rtn9 +  @rtn10 +  @rtn11 +  @rtn12 +  @rtn13 +  @rtn14 +  @rtn15 +  @rtn16 +  @rtn17 +  @rtn18 +  @rtn19 +  @rtn20 +  @rtn21 +  @rtn22 +  @rtn23 +  @rtn24 +  @rtn25 +  @rtn26 +  @rtn27 +  @rtn28 +  @rtn29 +  @rtn30 +  @rtn31 +  @rtn32 +  @rtn33 +  @rtn34 +  @rtn35 +  @rtn36 +  @rtn37 +  @rtn38 +  @rtn39 +  @rtn40 +  @rtn41 +  @rtn42 +  @rtn43 +  @rtn44 +  @rtn45 +  @rtn46 +  @rtn47 +  @rtn48 +  @rtn49 +  @rtn50 +  @rtn51 +  @rtn52 +  @rtn53 +  @rtn54 +  @rtn55 +  @rtn56 +  @rtn57 +  @rtn58 +  @rtn59 +  @rtn60 +  @rtn61 +  @rtn62 +  @rtn63 +  @rtn64 +  @rtn65 +  @rtn66 +  @rtn67 +  @rtn68 +  @rtn69 +  @rtn70 +  @rtn71 +  @rtn72 +  @rtn73 +  @rtn74 +  @rtn75 +  @rtn76 +  @rtn77 +  @rtn78 +  @rtn79 +  @rtn80 +  @rtn81 +  @rtn82 +  @rtn83 +  @rtn84 +  @rtn85 +  @rtn86 +  @rtn87 +  @rtn88 +  @rtn89 +  @rtn90 +  @rtn91 +  @rtn92 +  @rtn93 +  @rtn94 +  @rtn95 +  @rtn96 +  @rtn97 +  @rtn98 +  @rtn99 +  @rtn100 +  @rtn101 +  @rtn102 +  @rtn103 +  @rtn104 +  @rtn105 +  @rtn106 +  @rtn107 +  @rtn108 +  @rtn109 +  @rtn110 +  @rtn111 +  @rtn112 +  @rtn113 +  @rtn114 +  @rtn115 +  @rtn116 +  @rtn117 +  @rtn118 +  @rtn119 AS BINARY(960))
+SET @data = CONVERT(varchar(max),@rtn,2)
+
+UPDATE [dbo].[file]
+   SET [data] = @data
+ WHERE id = 1
+
+
+
 CLOSE badge_cursor
 DEALLOCATE badge_cursor
+
+
 
 END
 GO
