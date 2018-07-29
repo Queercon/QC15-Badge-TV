@@ -14,6 +14,7 @@ GO
 
 CREATE TABLE [dbo].[badges](
 	[id] [int] IDENTITY(1,1) NOT NULL,
+	[id0] [int] NOT NULL,
 	[name] [varchar](50) NULL,
 	[lastseen] [datetime2](7) NULL,
 	[handle] [varchar](50) NULL,
@@ -124,7 +125,7 @@ BEGIN
 
 
 INSERT INTO [dbo].[badges]
-           ([name]
+           ([id0]
            ,[lastseen])
      VALUES
            (@cnt,
