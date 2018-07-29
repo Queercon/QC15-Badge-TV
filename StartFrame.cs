@@ -407,23 +407,61 @@ namespace se.nightri.QC15_TV_Badge
             graphics.DrawString(text, font, color, rectangle);
         }
 
+        private void getOr()
+        {
+            using (SqlConnection con = new SqlConnection(sqlcon))
+            {
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "dbo.getOr";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    con.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        //MessageBox.Show(rtnData());
+
+                    }
+
+                    con.Close();
+                }
+
+
+                catch (Exception es)
+                {
+                    MessageBox.Show(es.Message);
+                }
+            }
+        }
+
+        private String rtnData()
+        {
+            getOr();
+            string rtnDataFile = null;
+            string sqlQuery = "SELECT [data] FROM [badge].[dbo].[file] WHERE ID = 1";
+
+            using (SqlConnection con = new SqlConnection(sqlcon))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            rtnDataFile = (string)reader["data"];
+                        }
+                    }
+                }
+            }
+
+            return rtnDataFile;
+        }
+
         private void sql_Click(object sender, EventArgs e)
         {
-            try
-            {
-                String query = "select * from badges";
-                SqlConnection con = new SqlConnection(sqlcon);
-                SqlCommand cmd = new SqlCommand(query, con);
-                con.Open();
-                DataSet ds = new DataSet();
-                MessageBox.Show("connected with sql server");
-                con.Close();
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-
-            }
+            MessageBox.Show(rtnData());
         }
     }
 }
