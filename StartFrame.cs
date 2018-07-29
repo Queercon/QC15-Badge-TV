@@ -196,28 +196,224 @@ namespace se.nightri.QC15_TV_Badge
 
         }
 
+        public static byte[] StringToByteArray(String hex)
+        {
+            int NumberChars = hex.Length;
+            byte[] bytes = new byte[NumberChars / 2];
+            for (int i = 0; i < NumberChars; i += 2)
+                bytes[i / 2] = Convert.ToByte(hex.Substring(i, 2), 16);
+            return bytes;
+        }
+
+        public void BadgeFeed(String hex)
+        {
+            char[] hexArray = hex.ToCharArray();
+            int b = 0;
+
+            for(int i = 0; i<hexArray.Length; i++)
+            {
+                if(hexArray[i] == '0')
+                {
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                }
+                else if (hexArray[i] == '1')
+                {
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                }
+                else if (hexArray[i] == '2')
+                {
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                }
+                else if (hexArray[i] == '3')
+                {
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                }
+                else if (hexArray[i] == '4')
+                {
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                }
+                else if (hexArray[i] == '5')
+                {
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                }
+                else if (hexArray[i] == '6')
+                {
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                }
+                else if (hexArray[i] == '7')
+                {
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                }
+                else if (hexArray[i] == '8')
+                {
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                }
+                else if (hexArray[i] == '9')
+                {
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                }
+                else if (hexArray[i] == 'A')
+                {
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                }
+                else if (hexArray[i] == 'B')
+                {
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                }
+                else if (hexArray[i] == 'C')
+                {
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                }
+                else if (hexArray[i] == 'D')
+                {
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                }
+                else if (hexArray[i] == 'E')
+                {
+                    badgeFeed[b] = false;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                }
+                else if (hexArray[i] == 'F')
+                {
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                    badgeFeed[b] = true;
+                    b++;
+                }
+            }
+        }
+
         private async void HeavyOperationAsync()
         {
+
             // Example heavy operation
             while (true)
             {
 
-                Random gen = new Random();
-                for (int i = 0; i < badgeFeed.Length; i++)
-                {
-                    if (gen.NextDouble() < 0.02)
-                        if (badgeFeed[i] == true)
-                        {
-                            badgeFeed[i] = false;
-                        }
-                        else
-                        {
-                            badgeFeed[i] = true;
-                        }
-                    //Console.WriteLine(badgeFeed[i]);      
-                }
+                //Random gen = new Random();
+                //for (int i = 0; i < badgeFeed.Length; i++)
+                //{
+                //    if (gen.NextDouble() < 0.02)
+                //        if (badgeFeed[i] == true)
+                //        {
+                //            badgeFeed[i] = false;
+                //        }
+                //        else
+                //        {
+                //            badgeFeed[i] = true;
+                //        }
+                //    //Console.WriteLine(badgeFeed[i]);      
+                //}
 
-
+                BadgeFeed(rtnData());
 
                 // Check if Stop button was clicked
                 if (!this.stopProcess)
@@ -461,7 +657,7 @@ namespace se.nightri.QC15_TV_Badge
 
         private void sql_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(rtnData());
+            MessageBox.Show("Badge Feed: " + rtnData());
         }
     }
 }
