@@ -730,13 +730,15 @@ namespace se.nightri.QC15_TV_Badge
                                 prefix = " [SEC] ";
                             }
                             top[i] = (string)reader["badgename"] + prefix + (int)reader["badges_connected"] + " Links";
+                            //Console.WriteLine(i + " " + top[i]);
                             i++;
                         }
                         if(i<8)
                         {
-                            for(int t = 0; t < 8; t++)
+                            for(int t = i; t < 8; t++)
                             {
                                 top[t] = "Not Set Yet";
+                                //Console.WriteLine(t + " " + top[i]);
                             }
                         }
                     }
