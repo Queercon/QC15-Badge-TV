@@ -15,9 +15,7 @@ GO
 CREATE TABLE [dbo].[badges](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[id0] [int] NOT NULL,
-	[name] [varchar](50) NULL,
 	[lastseen] [datetime2](7) NULL,
-	[handle] [varchar](50) NULL,
 	[0] BINARY(10) DEFAULT 0 NOT NULL,
 	[1] BINARY(10) DEFAULT 0 NOT NULL,
 	[2] BINARY(10) DEFAULT 0 NOT NULL,

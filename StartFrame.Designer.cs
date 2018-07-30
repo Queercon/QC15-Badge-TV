@@ -40,6 +40,7 @@ namespace se.nightri.QC15_TV_Badge
             this.serialPortRead = new System.IO.Ports.SerialPort(this.components);
             this.btnWindow = new System.Windows.Forms.Button();
             this.btnSql = new System.Windows.Forms.Button();
+            this.demoSelect = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnFullScreen
@@ -97,6 +98,18 @@ namespace se.nightri.QC15_TV_Badge
             this.btnSql.UseVisualStyleBackColor = true;
             this.btnSql.Click += new System.EventHandler(this.sql_Click);
             // 
+            // demoSelect
+            // 
+            this.demoSelect.FormattingEnabled = true;
+            this.demoSelect.Items.AddRange(new object[] {
+            "Demo Off",
+            "Demo On"});
+            this.demoSelect.Location = new System.Drawing.Point(442, 12);
+            this.demoSelect.Name = "demoSelect";
+            this.demoSelect.Size = new System.Drawing.Size(121, 21);
+            this.demoSelect.TabIndex = 7;
+            this.demoSelect.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // StartFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,6 +117,7 @@ namespace se.nightri.QC15_TV_Badge
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnRestore;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.demoSelect);
             this.Controls.Add(this.btnSql);
             this.Controls.Add(this.btnWindow);
             this.Controls.Add(this.btnFullScreen);
@@ -125,6 +139,7 @@ namespace se.nightri.QC15_TV_Badge
         private System.IO.Ports.SerialPort serialPortRead;
         private System.Windows.Forms.Button btnWindow;
         private System.Windows.Forms.Button btnSql;
+        private System.Windows.Forms.ComboBox demoSelect;
     }
 }
 

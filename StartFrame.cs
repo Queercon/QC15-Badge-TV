@@ -9,27 +9,32 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO.Ports;
 
 using se.nightri.QC15_TV_Badge;
+
 
 namespace se.nightri.QC15_TV_Badge
 {
     public partial class StartFrame : Form
     {
 
+
+
         protected Graphics graphics;
 
         FormState formState = new FormState();
         private Thread workerThread = null;
+        private Thread workerThreadSerial = null;
         private bool stopProcess = false;
+
+        private bool demoMode = false;
 
         // Declare a delegate used to communicate with the UI thread
         private delegate void UpdateStatusDelegate();
         private UpdateStatusDelegate updateStatusDelegate = null;
 
         private String sqlcon = "server=103.47.62.133;database=badge;UID=tv;password=2az8wA4LxuQRIIH9";
-
-
 
         public char[] encStr = new Char[7680];
         public char[] dcrStr = new Char[7680];
@@ -153,6 +158,7 @@ namespace se.nightri.QC15_TV_Badge
             //btnRestore.Hide();
             btnWindow.Hide();
             btnSql.Hide();
+            demoSelect.Hide();
 
             draw = true;
 
@@ -161,6 +167,7 @@ namespace se.nightri.QC15_TV_Badge
             // Initialise and start worker thread
             this.workerThread = new Thread(new ThreadStart(this.HeavyOperationAsync));
             this.workerThread.Start();
+
 
         }
 
@@ -172,6 +179,7 @@ namespace se.nightri.QC15_TV_Badge
             btnRestore.Show();
             btnWindow.Show();
             btnSql.Show();
+            demoSelect.Show();
 
 
 
@@ -185,6 +193,7 @@ namespace se.nightri.QC15_TV_Badge
             btnRestore.Hide();
             btnWindow.Hide();
             btnSql.Hide();
+            demoSelect.Hide();
 
             draw = true;
 
@@ -193,6 +202,7 @@ namespace se.nightri.QC15_TV_Badge
             // Initialise and start worker thread
             this.workerThread = new Thread(new ThreadStart(this.HeavyOperationAsync));
             this.workerThread.Start();
+
 
         }
 
@@ -391,34 +401,36 @@ namespace se.nightri.QC15_TV_Badge
             }
         }
 
+
         private async void HeavyOperationAsync()
         {
-
-            // Example heavy operation
-            while (true)
+            while(true)
             {
-
-                //Random gen = new Random();
-                //for (int i = 0; i < badgeFeed.Length; i++)
-                //{
-                //    if (gen.NextDouble() < 0.02)
-                //        if (badgeFeed[i] == true)
-                //        {
-                //            badgeFeed[i] = false;
-                //        }
-                //        else
-                //        {
-                //            badgeFeed[i] = true;
-                //        }
-                //    //Console.WriteLine(badgeFeed[i]);      
-                //}
-
-                BadgeFeed(rtnData());
-
-                // Check if Stop button was clicked
                 if (!this.stopProcess)
                 {
                     // Show progress
+
+                    if (demoMode)
+                    {
+                        Random gen = new Random();
+                        for (int i = 0; i < badgeFeed.Length; i++)
+                        {
+                            if (gen.NextDouble() < 0.02)
+                                if (badgeFeed[i] == true)
+                                {
+                                    badgeFeed[i] = false;
+                                }
+                                else
+                                {
+                                    badgeFeed[i] = true;
+                                }
+                            //Console.WriteLine(badgeFeed[i]);      
+                        }
+                    }
+                    else
+                    {
+                        BadgeFeed(rtnData());
+                    }
 
                     for (int i = 0; i < badgeFeed.Length; i++)
                     {
@@ -551,17 +563,16 @@ namespace se.nightri.QC15_TV_Badge
                     Invalidate();
                     await Task.Delay(200);
 
-                    
-                    
                 }
                 else
                 {
                     // Stop heavy operation
                     this.workerThread.Abort();
                 }
-                //Console.WriteLine("-------------------------");
             }
+                        
         }
+
 
         private void UpdateStatus()
         {
@@ -658,6 +669,20 @@ namespace se.nightri.QC15_TV_Badge
         private void sql_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Badge Feed: " + rtnData());
+        }
+
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(demoSelect.Text == "Demo On")
+            {
+                demoMode = true;
+            }
+            if (demoSelect.Text == "Demo Off")
+            {
+                demoMode = false;
+            }
+            MessageBox.Show(demoMode.ToString());
         }
     }
 }
