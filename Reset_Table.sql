@@ -152,9 +152,9 @@ INSERT INTO [dbo].[badges]
            SYSDATETIME());
 
 INSERT INTO [dbo].[badgestats]
-           ([id0])
+           ([id0], [badgename])
      VALUES
-           (@cnt);
+           (@cnt, 'TBD');
 
 SET @cnt = @cnt + 1;
 
