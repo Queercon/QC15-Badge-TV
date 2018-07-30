@@ -32,15 +32,16 @@ namespace se.nightri.QC15_TV_Badge
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartFrame));
             this.btnFullScreen = new System.Windows.Forms.Button();
             this.btnRestore = new System.Windows.Forms.Button();
             this.headingCenter = new System.Windows.Forms.Label();
-            this.serialPortRead = new System.IO.Ports.SerialPort(this.components);
             this.btnWindow = new System.Windows.Forms.Button();
             this.btnSql = new System.Windows.Forms.Button();
             this.demoSelect = new System.Windows.Forms.ComboBox();
+            this.decryptValue = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnFullScreen
@@ -110,6 +111,39 @@ namespace se.nightri.QC15_TV_Badge
             this.demoSelect.TabIndex = 7;
             this.demoSelect.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // decryptValue
+            // 
+            this.decryptValue.AutoSize = true;
+            this.decryptValue.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.decryptValue.ForeColor = System.Drawing.Color.Lime;
+            this.decryptValue.Location = new System.Drawing.Point(414, 39);
+            this.decryptValue.Name = "decryptValue";
+            this.decryptValue.Size = new System.Drawing.Size(193, 39);
+            this.decryptValue.TabIndex = 8;
+            this.decryptValue.Text = "000.0000";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Lime;
+            this.label1.Location = new System.Drawing.Point(86, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(347, 39);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "File Decrypted:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Lime;
+            this.label2.Location = new System.Drawing.Point(594, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 39);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "%";
+            // 
             // StartFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -117,6 +151,9 @@ namespace se.nightri.QC15_TV_Badge
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnRestore;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.decryptValue);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.demoSelect);
             this.Controls.Add(this.btnSql);
             this.Controls.Add(this.btnWindow);
@@ -128,6 +165,7 @@ namespace se.nightri.QC15_TV_Badge
             this.Text = "QC TV";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -136,10 +174,12 @@ namespace se.nightri.QC15_TV_Badge
         private System.Windows.Forms.Button btnFullScreen;
         private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.Label headingCenter;
-        private System.IO.Ports.SerialPort serialPortRead;
         private System.Windows.Forms.Button btnWindow;
         private System.Windows.Forms.Button btnSql;
         private System.Windows.Forms.ComboBox demoSelect;
+        private System.Windows.Forms.Label decryptValue;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

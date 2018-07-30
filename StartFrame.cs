@@ -25,7 +25,6 @@ namespace se.nightri.QC15_TV_Badge
 
         FormState formState = new FormState();
         private Thread workerThread = null;
-        private Thread workerThreadSerial = null;
         private bool stopProcess = false;
 
         private bool demoMode = false;
@@ -57,6 +56,8 @@ namespace se.nightri.QC15_TV_Badge
         public bool[] stateOne = new bool[7680];
         public bool[] stateZero = new bool[7680];
 
+        public float percentDecrypted = 0;
+
 
 
         public static String encStrS = "nsNfxCW3kwNC0v6O97DkW4yQyI2Ze0D38yjHtFajOlPjSFS84u5a8RXbs5IRqRpNfSRwBymTNdpouBkAwuh9cwbTKup4tiD4NvR0XMlLuerW86SfRkxWCvpfUqjohNhPUR0VOn3ys7i38Qa2OQicP2THu7n43uLqultC7mlFd93n80jiKWRyV5WkD0fan5L6mLJwGqWKUclI724WEGA30NeZWDQXPCjp68MjgwTmASdFENbsYNjCdtgYFedlTwIj6IMutQJzoySWJ20jjJVFdeWCjYWLQVEZyghh7H9XHFEGnvqVzRoZfJujQOTFRLV2FblwbXq3hVymFH3S93mtZc963Yc53mwa4ncZMf3kJBRVuNBrT3oXBCfCTARsCtOf5NRUnCzRo0CeAREqeK10h8iraHhBDcio1vMfHq6VWX1kmBEVJnNsONrWCIb8nigwkxuYMNUbJ0yDoD6Xnvry3S08e91gXUkHzT0xCQXtHbRfdGfZ05R8ZpzbYwqJFvi2bmsPApQoVtjS0npGnpwdA1353JFNDd2fxvMYwMXk4rFZjIHKf4T9FZMKsJzkh4jrMTD31zmqiiNOcNkVaQLgUioiwNCWfXAIBOTEIJexekZqfmjpw7r4KDY3nhlUhWu9Wf6L8yzkQmq4b7hE4ZBQ06NONsgLdnDxGYULSpfxneAKwRN3xDkDMFeJecNhXGRa5af2pVd585KJCOdP3X0RHrfQNoEmqwSW49EpnmwtAoIok6fEBulXTKuFHzz1eo5uLMIGSueyCl9oICOlzTaVML0BQmuqMk9BhFqbWD3nbL64zI6zvEkmVr3bHmQR0YIyPkzhXg39CvCwTDDQRk54akZ5CLUsCnTjGhiTulTA7jF4nCiyisOmg15n6kTIYeAFFkeEQAJKAh0G1gmudJmKvfI8N3ijR3NMlZq0wB1czE6JdnupT6RyDnrjokzQ6cTmzgldO1zDdMppr3tNQJrFc7EF8Amr6pPsAslC5KPtCgTp2eDE9f2sekargOuRs0bziVE38lsZUQRWHUCZqfAv3uf6jof3rrVkxPelhLUKZrP3OnOjOCohHQYTObefvKlsovd5pZX35TBFHvfRCYvuOCIM13iueYjaXJwwqSVeQETO7zNQL8wM6Uwa79SiFx1ghObFg9LC6Nesjzi6PrWv8f5MkgjpR8HuVzz9G4R83bFZyHWwl3zkPncnEsk8AA3OIr14U3oxdW0rt0Z5ZwwzCnV01kyp324qLVYsfZURFMQJuJfUZGsRPz2WitBe32kUVSZX55JAGnoPKMwbt0hdiOKZsWkLO1Ga9QMqT0iL1S6j09qfJOMamCnrExknOrp8nQnZyACQnUkNgsIVRiE5ZCWZoEJHhgOBqEjIgfkPz0R7nes4DMc89GWwf0gvaADdMndfveSLcGkYpq1f0BkBUyRoUzbHzUyCJLCovprVdNfsjBVRf8uQc0l5hItlCH5tzbKBE4zjKr8eMsJ30sGwA7f1t6VXJTGNhphJtKksJQsRQuZRJgVkOXXHDcLa6BeRBi6TcpaImUm2M4CvcuZ5OR2esWgyarh2buMAAhBxVsP2Q8ctDk8UZo5B8rxgDfOsy1MP4RP0mNthjbj4yetLHQQUmGuOfWcKoF9faf2kWeYES6K1pM9gJbjDHn2dE2uuJ1mxakvbDTFPKIi9vm3buaqFJwxLeOj9SY3YFlKiuC373mamuYwY8oPJlSHmPzJ7Bgcj108ZLgR0EABRo6uzHdWjixtYJjk3chzCPww9vWrJcjI808Wb4Lzg1PqeiTCmNqsXU9osoml5yu3xtkuCsSI5DsVT5cLEVLivWrE0JRIA4kWX2wS1gr8Uz4JXxQdAhUJ4linhPpHeYR7Mxb3maHnFB1rb2QlGhwzRay1y1BYz54okt0R7ErzQuhmLs68smcJotFVUkDYHjPzMf824XbJZT0p1ngMAyoxRvP1Dw7YKRr1dCSo5dLqGtTvL5DLCa7Gni6jpaRAk0007m0BT82zcfzlvy5Diklsm07VfgM4s4W3FIoatIwJFttroz0iGN5VXS9ZRf4pqdTu7HQXdnu3WK3BToKyoQf9NPzNAsuUuGASNXCWSpQjqJVb14xLpx6HjE85yzf7fLdWyuAH56jLKJw0y1bvcCopFJjXtwHfdL2U7KyYaNxe6LG7uT3EflyKhLDbJurwRjWVD6O2VQ1fylmztKTGAIPhS5sSUeyWHZOtP2lIbK0ejPKY60s6zy3NI6Se5NCQ2BoUByEd4P4iisaAb9n7IXsaK7JZCRn9XxrFMboQ0NAug1NScR4Tn2pefRA5U2li8bOa6VQW0yAAMwOCSf8ptK0VcpulEn3lZ5pKbrjPRuAFs0k4gjK0426aAnoQZQTrsAM4YnQIaPIruxq4euU86wDiC06PJ2TZjTZxvjWSKVsXsE038XYlxDa9BSyHWf2dE8IvUysX2uxh3lGTKNAJ25v0VcevMnNfCo8yEBItlM5WUaIDgCGIGqazCCX34aRNeFQZhJMrFFslphMnAXOSzP8OG3J0m3LnBCZH5BPEycSV0Vqn1Eztel8AizGmO3AI46gCQ8yVcsPUGd3f5m8Ny3t1Eigw96DuSNELwnWthREzdfJ8nSrdiLvPUShQkUb1TAbJxx3Y03N5rZyxpFH3S907f1JfNFCT5SThSBzEK0iZi84hmmRdVyBDWUsF7lmLwKcydWJK5YH9uB81AEoFzS04z79UqWIiG29f4idHh89wyrtQwcqaVCjKmhhSMUKxtY4mWiWn7IUS7ZTBc70BAIcNqa9bRnU72mFUvgqhhHrr7eRnsdddZv4uahOOaWE2WIL5LhxgYMUA4iyBfAf3E1h0JDlgHyfk243ubv2xTTOy2VASxrhNXFESFeu1zQz4AY3kgl4Cs9cvDyVQxheJjE2rjS47LKPaiwhlKUrqos8UVjVhPk4Iw2GziREqJHQ0IxC5qNKQdjYFbiUtn9aZSxDCsMnaTKpuZeDt8nkiIW9chkFHjmEqlBTeifUaj5xn1Hvn37rzHH2g3MujKuWsio3S8oq5LezhujNgUNDkIBpgw8fqU1Cwn5OQu0a57xbomBZPfvB33Kf7EazdfwPeH7bmnEBA2lY0C35IiU1J4ACVH4OL4dioRlMlLSQFiSLQQ8UDX5yWkmAYafbNTIr6rbtMF75Qx23E36KzzfSu0BsWutR3IxJJRlhpVnzmZQ827Hjtd8A3DWy4VjKmeWxtWagOXq5czqB7v4OebBmHB6HBS85PZrl0tBCosoYIWfmCNkp2xzl2xyV9QOgSkesWL4H1nim99lyD7ImeYoGw8GBnaluoIsDKUDle3EdjJjhkW1TU1Q1rHQHdQHHDmYvMi7CyholWUI6QMGKg8i4JrBo1Y5O5FAyRDzazmHzKCcK16E2kwNAaffaBViKBCOASdGCCNg2cJJHSMl8zpK6PBy662vHlHF3R3Xa8g02vFaCMOlDjFMl6MQhOUCDpjyBbMxzX2g7je05v4lsN0m55KiLzCKszjG6gYv36MsZdzzqchsUHBT4EX6LfYVWzcWqSw2Yfem6zsRsIuWCaaezClifBGSTaoTgmpbxVFH4Tp3Eyu3Q0XM0qHcqVujWb0iTIQEnbA8I0JJ3WJkcZ6bceekah90jc7hWWThqauX6nJsKc6nmS7jIVzTW7jEFLNjk6airEiHsNZz5EnY8tQVzxxBsSnhx5oxaeE0YYNhofqG06FzO2WYh1p3Yhw8rJ8tpClyhQxxg3ZHH5c8pADuu5MhUVqENcipTGd94IBDXWcFBD8qT2SIZBAPrv3YjQMMFCACZ5xeVcMDnCum1kG7YcQLQEex4yHUk340R02UdBh6BQkzKolrautizb9VxB59mlAJzTQuAnGIty2U8OKWpWNKF5GUAS70pRvbImnGq7fYUsJSI3ZYCb3Am9brNmKhrfP36zCzS0catq0prOkvUXx9Irt8rrc5T3AbhJmQt1dDVFnGm60OW8Yt8hc9YrfIYndAO1SBBGb6oWMXw085yEQE3utb2rNhyrpt0lUqXI6lK8abQXDhUkPCVzfeprx5Ue9gZhX59jefPMCaLGjqmQ1wJdkwXkvGblPLPamT5NQOPZkTR1NJg2k9jK4qG88n6PMacuOzvYFTsKTRSa8hFXSG2ZAYtKp4zmDJtOnWFgW3119g1M0wcX5iM5YeI7zz9SEoVm8SDhY6qgaDzeZJuHmC5Ot5xRQlCr6eU6kQX8pSCjMPxyxNSATjwNc95rHiFE4bD8HrWgFLe4kBKqJgYLEiRosxKgg4Rtmb06MupxcpAqtxvJGMDVzvwgLUiWUecZJqgAwobNWJY5cPipr97gEZj8XM9XNqqRleNqbHGDGT5lOHwObtdtRp1PC1mmiUjvEkv4PWgd2jc3Mi0fIZQXCVhUp8O8knBtZbcHnjmrlBjGi3L7x3eWuSBXTg5UcEhjCdYsBnILo6cAJRYa4woca3TUqCHep6cPYYx6676RgceXwRJLj3GblSfzSEsDsMbJyEjn4U0WZvuMyzcJlkDgGCMPr1jnLDijrgmObHAgq7PZcVqzYCfvYrAp1Q5oYOnUuIWBhCMKMr46embgLuj1ZCy1BDSvrR8EAVuxJ8nAvdgEzq58Sblqg86Ah2kykVJkO3A5lokXQlMZW1Qyf3t36QVTITyoF4Yri3azfaG8drE1O38cdxMP3h1YfCMctXEOMsFNScirZoluxMUyse6uKzZm7HUihEdJlqqv6qGlUs2UXhQ2NZPsXdRJ41Wv2AmE4Te1Gyhdfha3cYyDSbNvzjuMc3BLHmJ7fVqiUT9IKhai7yUcGmRwOJ0LRXI0bW8XyReaplZNm06L3vHxtDhJU4oRELzQIwxzuzSoPLg05HOjVBjkd4QNfStPgUFzah3SUCAtMQsk3fsY3mGyC5qMCqdwh7n2earpvMehFRLxZStiRa3xxVZotK6ngUrwaXmxau3gEOMmfBzd9dF4Qt9xNwNDe4fsFRcSyqhVKOJJJYyF06qkR3xeF08cU1tGVifTkitxR4KlXCUDFiYpkET3q6awLyqHtqFnygz2d9bTauut2Gm8eFU9k4Qiiy8ZoPcZBELPEr7IITSdtGsTinA8vPtGCDpFGVHG8axMbsYZZnBl6ktG7enXQTJJvhZw5nXd7RVgYs3VI5vKHFOIgFOpwSAtL793GDCJMMwzjFSkYysfk1e4xDxImQwVnRrQAvDaKjLB4U46vs1kk8q8kxQIbheQQWFplWgV3BZdLPtimw43MphQw6BqMXFjXVALh9GEXfqPxldK78JzbN8xvJQ4I8aQlVedRaw8zP9iw0dw4blt4TPGgqqUuIyQfC6QDAQbH6IBXmiN9eq12T22juLgUoiqKVFzUqIdA9Xa92PSDt308Hviok75KPT32gAA7JtpUiAYcOivA2M3cRNBEWFBHkMoNvdfgXs3jFLj43NisPqlE49J67h5qtUWweeXQ0VSRYpFEaK2x8Eh6ew0WEhO1gmECxqqPo5QO59EHjgsjTKutYssvFOEbU3I9YxVmwwLEDVNe1l1Ye49HvWLYnPafGVTr8qnLMMVEjyiyuZ47lybn2wDnqLXrd12ArxZJBIxzEv4GaQQyh1wkykaVGg6CtXQp63JveneLZq636yFebyaCs0JcALVqIbt3ZcWm5Mj27p3nhf8sjC5Z3jkdzQurnR4maBJse4WYC7ZnK82S8E6xFy17VuygBAfNKxTpTd2ehJsmAUhPPx03I5TiiOYvlrVWEuZmHMu9E4wg2PzK3ntKYeaNvkgcOQTZe5MmPrJxBJ8Em0f7f69yrf6KJYyMCeXgnRfEg7fibzW7LJuk1OBKs9lf9s2dhjJredkZLr5HdIJ9eFJRLbN9z9L2dzWjNprEwQJkkTaYu2VT3RDgeY8k1NNbCPIhVxbSxi15l8070hfXfomAViwa38Vvq7zKWQEGOsO3pGa92h9Y06d9gr1efu0Frc2kYALvcriVIiZisog1jUYSVVNrsPOxkGAoC099zeN3htow52vWGE6Ie518LyjVGL0qL76conmmIm80faISbCtkOPjlcRBTyVf7rYhODnoIDv9dtcRpH3MyWHdWFtA0yYx3uwrpoPMTSbVXapFyQbVEPWcU1s6O2sifLzXuDmUGxvXJzDqQaopEtC4HIfeHegJpTWk1kzS5OCgBLzjCXA12CmaagPvnIlZCUJOy5pv4QC8bledXGNdxZpsXasNKK8qGMTUm6VlUBBUvciI1l5iVcltmbc635HzM36XtEDRicjijaXfdAnXjXfuSeUW7CTDSTue7xBCk1HrpA88xslyP7kZLGf9xYaRcLOlvuYss55uRYHRzgYOpFbKN9FD9UHpJEDr1Ci6x6oUWgNCZpmgblEabWUwxAMD6ohtNZwPzK6J4V2zOZ6znhwUlFTpHV67RGLYLZLA6OVrPmzDeII3GtUWbEZieAnSN12lCMeRGZBM07JxB01SpJ6RvklmnWoGCdRun2ctUKlwPkoheUqL8voYHVcy6CJvtOZGKm4mHQVK3CiNBv0FshrTeYdYcSgTEPEHXpc2azrsphOaTgx9jTDDO6yVBtTITAuPjQZaSZnTt1hF39AIxn5VKtzLzqFOyhH92SaCn1vzDnOSp8lXjXUwLM4oVLKXn0QtesDco6eGO3SzGk7nozLojRjNU1S9MTTksudX72I3VfRBxrkFfFbzDThxJrlbPQmLhpOVyl1U9K3gzJTjJy73x0mwKTC4c5mNvYzNnlfal3YrSgUQfbY5WTLOxPBeIJ1bUZN1YvuyvRMtJ2iZgu3G4drXSbVKiTt654i8SSNdm4MTPvYP3mLdOQZRsFDVEO2pnJRSV1M3I3txiOB5BmKRlrZd9AEf7qaqKVlCHt8xnl8bgSTWlpnU8X6YRlycJKaCCkdpYZp4JyLbjco42DIEN29Z0R3ZQWQKF5T0a8MM8hImBIeXlWlMGYkGXbyNQpF5t5hJsFK9ZkgBqaZJBGh3FaThtZORTxNJ2JisLkZILqXwjAnYyZoW1YAqgkNJt1BhcVtwBtv8V3GYfykLAHFzlSc81D8JHoLJvcttTEcJhw1M0Ikzn6fbmXu6GGbg1AfT1Q118iBrXhfkMrmlAjzbvymQpLxkj62tkr7QenHbHz4XoYsdveWdTomspKDHlMTFN917Nphie2h7vEGRRyoc9pKQT4ZRYXB0C0mMcu4f46vO6KZYzCLrpAE7uGFAb7rOO7C2FVsZHItiTMczA9kJxXJewzxvht50v8xs6DDlZ3Kj13Hr4YN7Qcv1vmkiPvT7xT0blcGc4gIknK7hukO2eXGoy3med53i4dV9WUfDCeQOZoVsoFov07RkT5kvWFOFJEACKEa2OgGAOoeMr8bCctuECwylkddx2drhrGSfrvtKEjldFlrcDrigtfPDIkemttoIUNKgO4pLLWDyDrLQ3UrdxW8Gkiej3NSul3etJJ2jMfwSnq04FUZ159ZyuDHXIaRBf4A3s8hYVR7A3bsm6hOLnD3hYetSBKHpOdgYXDmcFstn2eRNLvDXYM4tf4ieRChBJQW0YWPivVUqrwY6H1iUp2ml2b36emvfjnE8377NkSKZcngKK7A3BurWEYzhSIWUeBzHgMe5CHVJ8c2Th8m58WfKC2f0w56sBg5N5A0TZSiWCnJbyAZnu0VQLieAfBJwcUygB";
@@ -79,6 +80,8 @@ namespace se.nightri.QC15_TV_Badge
 
             encStr = encStrS.ToCharArray();
             dcrStr = dcrStrS.ToCharArray();
+
+            
 
             for (int i = 0; i < stateZero.Length; i++)
             {
@@ -432,8 +435,14 @@ namespace se.nightri.QC15_TV_Badge
                         BadgeFeed(rtnData());
                     }
 
+                    float decryptCount = 0;
+
                     for (int i = 0; i < badgeFeed.Length; i++)
                     {
+                        if(badgeFeed[i])
+                        {
+                            decryptCount++;
+                        }
                         // LAYER SIX FOR BRAND NEW CHARACTERS
                         if (badgeFeed[i] == true && stateZero[i] == true)
                         {
@@ -559,7 +568,11 @@ namespace se.nightri.QC15_TV_Badge
                         }
                     }
 
-                    //this.Invoke(this.updateStatusDelegate);
+                    percentDecrypted = (decryptCount / 7680) * 100;
+
+                    //Console.WriteLine(percentDecrypted);
+
+                    this.Invoke(this.updateStatusDelegate);
                     Invalidate();
                     await Task.Delay(200);
 
@@ -576,7 +589,9 @@ namespace se.nightri.QC15_TV_Badge
 
         private void UpdateStatus()
         {
-            
+
+            decryptValue.Text = percentDecrypted.ToString("00.0000");
+
         }
 
 
@@ -684,5 +699,7 @@ namespace se.nightri.QC15_TV_Badge
             }
             MessageBox.Show(demoMode.ToString());
         }
+
+
     }
 }
