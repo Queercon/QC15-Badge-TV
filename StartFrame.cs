@@ -705,6 +705,19 @@ namespace se.nightri.QC15_TV_Badge
             //MessageBox.Show(demoMode.ToString());
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

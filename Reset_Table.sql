@@ -116,9 +116,31 @@ CREATE TABLE [dbo].[badges](
 ) ON [PRIMARY]
 GO
 
+DROP TABLE [dbo].[badgestats]
+
+GO
+
+
+CREATE TABLE [dbo].[badgestats](
+    [id] [int] IDENTITY(1,1) NOT NULL,
+    [id0] [int] NOT NULL,
+    [badgename] [varchar](50) NULL,
+    [lastseen] [datetime2](7) NULL,
+    [badges_seen] [int] DEFAULT 0,
+    [badges_connected] [int] DEFAULT 0,
+    [badges_uploaded] [int] DEFAULT 0,
+    [ubers_seen] [int] DEFAULT 0,
+    [ubers_connected] [int] DEFAULT 0,
+    [ubers_uploaded] [int] DEFAULT 0,
+    [handlers_seen] [int] DEFAULT 0,
+    [handlers_connected] [int] DEFAULT 0,
+    [handlers_uploaded] [int] DEFAULT 0
+	) ON [PRIMARY]
+GO
+
 DECLARE @cnt INT = 0;
 
-WHILE @cnt < 449
+WHILE @cnt < 450
 BEGIN
 
 
@@ -128,6 +150,11 @@ INSERT INTO [dbo].[badges]
      VALUES
            (@cnt,
            SYSDATETIME());
+
+INSERT INTO [dbo].[badgestats]
+           ([id0])
+     VALUES
+           (@cnt);
 
 SET @cnt = @cnt + 1;
 
