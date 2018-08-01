@@ -737,7 +737,7 @@ namespace se.nightri.QC15_TV_Badge
                         {
                             for(int t = i; t < 8; t++)
                             {
-                                top[t] = "Not Set Yet";
+                                top[t] = "";
                                 //Console.WriteLine(t + " " + top[i]);
                             }
                         }
@@ -777,7 +777,7 @@ namespace se.nightri.QC15_TV_Badge
                         {
                             for (int t = 0; t < 8; t++)
                             {
-                                critical[t] = "Not Set Yet";
+                                critical[t] = "";
                             }
                         }
                     }

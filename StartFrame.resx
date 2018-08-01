@@ -117,6 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label3.Text" xml:space="preserve">
+    <value>                                                   #4
+A6 EF 70 93 57 7E 3F F7 01 E9 AB 81 71 42 60 F8 E2 46 
+BF A3 2E 3D DB D6 1A 54 04 EC A0 DC C6 29 88 3D 00 67
+D6 E2 F0 27 36 9A 02 69 01 D6 AB C2 BC 36 C1 02 6B 00 
+12 6E 99 43 B2 54 D5 46 CD 7A 5C 04 F5 7D 07 BF 6D 6C</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

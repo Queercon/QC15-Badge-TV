@@ -60,6 +60,7 @@ namespace se.nightri.QC15_TV_Badge
             this.top2 = new System.Windows.Forms.Label();
             this.top1 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnFullScreen
@@ -363,6 +364,17 @@ namespace se.nightri.QC15_TV_Badge
             this.label21.Text = "Top Recent";
             this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Lime;
+            this.label3.Location = new System.Drawing.Point(1327, 924);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(548, 90);
+            this.label3.TabIndex = 35;
+            this.label3.Text = resources.GetString("label3.Text");
+            // 
             // StartFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,6 +382,7 @@ namespace se.nightri.QC15_TV_Badge
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnRestore;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.top8);
             this.Controls.Add(this.top7);
             this.Controls.Add(this.top6);
@@ -435,6 +448,7 @@ namespace se.nightri.QC15_TV_Badge
         private System.Windows.Forms.Label top2;
         private System.Windows.Forms.Label top1;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label3;
     }
 }
 
