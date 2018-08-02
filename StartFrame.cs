@@ -33,7 +33,7 @@ namespace se.nightri.QC15_TV_Badge
         private delegate void UpdateStatusDelegate();
         private UpdateStatusDelegate updateStatusDelegate = null;
 
-        private String sqlcon = "server=103.47.62.133;database=badge;UID=tv;password=2az8wA4LxuQRIIH9";
+        private String sqlcon = "";
 
         public char[] encStr = new Char[7680];
         public char[] dcrStr = new Char[7680];
@@ -82,7 +82,7 @@ namespace se.nightri.QC15_TV_Badge
             encStr = encStrS.ToCharArray();
             dcrStr = dcrStrS.ToCharArray();
 
-            
+            sqlcon = "server=" + sqlIp.Text + ";database=badge;UID=tv;password=2az8wA4LxuQRIIH9";
 
             for (int i = 0; i < stateZero.Length; i++)
             {
@@ -162,12 +162,15 @@ namespace se.nightri.QC15_TV_Badge
 
         private void button1_Click(object sender, EventArgs e) //start full
         {
+            sqlcon = "server=" + sqlIp.Text + ";database=badge;UID=tv;password=2az8wA4LxuQRIIH9";
+            sqlIp.Hide();
             formState.Maximize(this);
             btnFullScreen.Hide();
-            //btnRestore.Hide();
+            btnRestore.Hide();
             btnWindow.Hide();
             btnSql.Hide();
             demoSelect.Hide();
+            
 
             draw = true;
 
@@ -189,6 +192,7 @@ namespace se.nightri.QC15_TV_Badge
             btnWindow.Show();
             btnSql.Show();
             demoSelect.Show();
+            sqlIp.Show();
 
 
 
@@ -203,6 +207,8 @@ namespace se.nightri.QC15_TV_Badge
             btnWindow.Hide();
             btnSql.Hide();
             demoSelect.Hide();
+            sqlcon = "server=" + sqlIp.Text + ";database=badge;UID=tv;password=2az8wA4LxuQRIIH9";
+            sqlIp.Hide();
 
             draw = true;
 
@@ -787,6 +793,7 @@ namespace se.nightri.QC15_TV_Badge
 
         private void sql_Click(object sender, EventArgs e)
         {
+            sqlcon = "server=" + sqlIp.Text + ";database=badge;UID=tv;password=2az8wA4LxuQRIIH9";
             MessageBox.Show("Badge Feed: " + rtnData());
         }
 

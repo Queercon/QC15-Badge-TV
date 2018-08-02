@@ -61,6 +61,7 @@ namespace se.nightri.QC15_TV_Badge
             this.top1 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.sqlIp = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnFullScreen
@@ -375,6 +376,14 @@ namespace se.nightri.QC15_TV_Badge
             this.label3.TabIndex = 35;
             this.label3.Text = resources.GetString("label3.Text");
             // 
+            // sqlIp
+            // 
+            this.sqlIp.Location = new System.Drawing.Point(1352, 12);
+            this.sqlIp.Name = "sqlIp";
+            this.sqlIp.Size = new System.Drawing.Size(76, 20);
+            this.sqlIp.TabIndex = 36;
+            this.sqlIp.Text = "127.0.0.1";
+            // 
             // StartFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,6 +391,7 @@ namespace se.nightri.QC15_TV_Badge
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnRestore;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.sqlIp);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.top8);
             this.Controls.Add(this.top7);
@@ -449,6 +459,7 @@ namespace se.nightri.QC15_TV_Badge
         private System.Windows.Forms.Label top1;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox sqlIp;
     }
 }
 
