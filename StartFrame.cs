@@ -727,11 +727,17 @@ namespace se.nightri.QC15_TV_Badge
                         while (reader.Read())
                         {
                             string prefix = " ";
-                            if((int)reader["id0"] < 8 )
+                            if ((int)reader["id0"] == 7)
+                            {
+                                prefix = " [AWESOME] ";
+                            }
+                            else
+                            if ((int)reader["id0"] < 15)
                             {
                                 prefix = " [VIP] ";
-                            } else 
-                            if((int)reader["id0"] < 24)
+                            }
+                            else
+                            if ((int)reader["id0"] < 24)
                             {
                                 prefix = " [SEC] ";
                             }
@@ -767,7 +773,11 @@ namespace se.nightri.QC15_TV_Badge
                         while (reader.Read())
                         {
                             string prefix = " ";
-                            if ((int)reader["id0"] < 8)
+                            if ((int)reader["id0"] == 7)
+                            {
+                                prefix = " [AWESOME] ";
+                            } else
+                            if ((int)reader["id0"] < 15)
                             {
                                 prefix = " [VIP] ";
                             }
