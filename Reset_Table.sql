@@ -165,7 +165,7 @@ INSERT INTO [dbo].[badgestats] ([id0], [badgename]) VALUES ( 5 ,'The Master');
 INSERT INTO [dbo].[badgestats] ([id0], [badgename]) VALUES ( 6 ,'XedGeek');
 INSERT INTO [dbo].[badgestats] ([id0], [badgename]) VALUES ( 7 ,'Skippy');
 INSERT INTO [dbo].[badgestats] ([id0], [badgename]) VALUES ( 8 ,'Daddy');
-INSERT INTO [dbo].[badgestats] ([id0], [badgename]) VALUES ( 9 ,'Sphincter');
+INSERT INTO [dbo].[badgestats] ([id0], [badgename]) VALUES ( 9 ,'ZeroCool');
 INSERT INTO [dbo].[badgestats] ([id0], [badgename]) VALUES ( 10 ,'Spork');
 INSERT INTO [dbo].[badgestats] ([id0], [badgename]) VALUES ( 11 ,'Lipsyncki');
 INSERT INTO [dbo].[badgestats] ([id0], [badgename]) VALUES ( 12 ,'Parzival');
