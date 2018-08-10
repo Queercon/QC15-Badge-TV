@@ -588,7 +588,7 @@ namespace se.nightri.QC15_TV_Badge
 
                     percentDecrypted = (decryptCount / 7680) * 100;
 
-                    updateTop();
+                    //updateTop();
                     updateCritical();
                     lastSeenFile();
 
@@ -751,6 +751,23 @@ namespace se.nightri.QC15_TV_Badge
                 }
             }
 
+            sqlQuery = "SELECT TOP(1)[lastseen] FROM[dbo].[badgestats] ORDER By[lastseen] DESC";
+
+            using (SqlConnection con = new SqlConnection(sqlcon))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            critical[98] = ((DateTime)reader["lastseen"]).ToString();
+                        }
+                    }
+                }
+            }
+
         }
 
 
@@ -768,10 +785,6 @@ namespace se.nightri.QC15_TV_Badge
                         int i = 0;
                         while (reader.Read())
                         {
-                            if(i == 0)
-                            {
-                                critical[98] = ((DateTime)reader["lastseen"]).ToString();
-                            }
                             string prefix = " ";
                             if ((int)reader["id0"] == 7)
                             {
