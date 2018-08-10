@@ -590,6 +590,7 @@ namespace se.nightri.QC15_TV_Badge
 
                     updateTop();
                     updateCritical();
+                    lastSeenFile();
 
                     //Console.WriteLine(percentDecrypted);
 
@@ -622,6 +623,7 @@ namespace se.nightri.QC15_TV_Badge
             //top8.Text = top[7];
             critical0.Text = critical[99];
             LastSeen.Text = critical[98];
+            LastSeen2.Text = critical[97];
             critical1.Text = critical[0];
             critical2.Text = critical[1];
             critical3.Text = critical[2];
@@ -727,6 +729,30 @@ namespace se.nightri.QC15_TV_Badge
 
             return rtnDataFile;
         }
+
+       // 
+
+        public void lastSeenFile()
+        {
+            string sqlQuery = "SELECT TOP(1)[lastseen] FROM[dbo].[badges] ORDER By[lastseen] DESC";
+
+            using (SqlConnection con = new SqlConnection(sqlcon))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            critical[97] = ((DateTime)reader["lastseen"]).ToString();
+                        }
+                    }
+                }
+            }
+
+        }
+
 
         private void updateTop()
         {

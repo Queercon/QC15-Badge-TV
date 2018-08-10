@@ -64,6 +64,7 @@ namespace se.nightri.QC15_TV_Badge
             this.critical10 = new System.Windows.Forms.Label();
             this.critical9 = new System.Windows.Forms.Label();
             this.LastSeen = new System.Windows.Forms.Label();
+            this.LastSeen2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnFullScreen
@@ -433,6 +434,18 @@ namespace se.nightri.QC15_TV_Badge
             this.LastSeen.TabIndex = 47;
             this.LastSeen.Text = "LastSeen";
             // 
+            // LastSeen2
+            // 
+            this.LastSeen2.AutoSize = true;
+            this.LastSeen2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastSeen2.ForeColor = System.Drawing.Color.Lime;
+            this.LastSeen2.Location = new System.Drawing.Point(2186, 1885);
+            this.LastSeen2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LastSeen2.Name = "LastSeen2";
+            this.LastSeen2.Size = new System.Drawing.Size(129, 36);
+            this.LastSeen2.TabIndex = 48;
+            this.LastSeen2.Text = "label4";
+            // 
             // StartFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -440,6 +453,7 @@ namespace se.nightri.QC15_TV_Badge
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnRestore;
             this.ClientSize = new System.Drawing.Size(3244, 2002);
+            this.Controls.Add(this.LastSeen2);
             this.Controls.Add(this.LastSeen);
             this.Controls.Add(this.critical16);
             this.Controls.Add(this.critical15);
@@ -514,6 +528,7 @@ namespace se.nightri.QC15_TV_Badge
         private System.Windows.Forms.Label critical10;
         private System.Windows.Forms.Label critical9;
         private System.Windows.Forms.Label LastSeen;
+        private System.Windows.Forms.Label LastSeen2;
     }
 }
 
