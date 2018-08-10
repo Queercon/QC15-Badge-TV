@@ -748,7 +748,8 @@ namespace se.nightri.QC15_TV_Badge
                             {
                                 prefix = " [SEC] ";
                             }
-                            top[i] = (int)reader["id0"] + " - " + (string)reader["badgename"] + prefix + (int)reader["badges_connected"] + " Links";
+                            int id0 = (int)reader["id0"];
+                            top[i] = id0.ToString("000") + " - " + (string)reader["badgename"] + prefix + (int)reader["badges_connected"] + " Links";
                             //Console.WriteLine(i + " " + top[i]);
                             i++;
                         }
@@ -782,7 +783,7 @@ namespace se.nightri.QC15_TV_Badge
                         {
                             if(i == 0)
                             {
-                                critical[8] = "7 - Skippy [AWESOME] " + ((int)reader["badges_connected"] + 1) + "^666 Links";
+                                critical[8] = "007 - Skippy [AWESOME] " + ((int)reader["badges_connected"] + 1) + " Links";
                             }
                             string prefix = " ";
                             if ((int)reader["id0"] == 7)
@@ -798,7 +799,8 @@ namespace se.nightri.QC15_TV_Badge
                             {
                                 prefix = " [SEC] ";
                             }
-                            critical[i] = (int)reader["id0"] + " - " + (string)reader["badgename"] + prefix + (int)reader["badges_connected"] + " Links";
+                            int id0 = (int)reader["id0"];
+                            critical[i] = id0.ToString("000") + " - " + (string)reader["badgename"] + prefix + (int)reader["badges_connected"] + " Links";
                             i++;
                         }
                         if (i < 8)
