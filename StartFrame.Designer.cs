@@ -69,7 +69,7 @@ namespace se.nightri.QC15_TV_Badge
             // btnFullScreen
             // 
             this.btnFullScreen.Location = new System.Drawing.Point(186, 23);
-            this.btnFullScreen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnFullScreen.Margin = new System.Windows.Forms.Padding(6);
             this.btnFullScreen.Name = "btnFullScreen";
             this.btnFullScreen.Size = new System.Drawing.Size(150, 44);
             this.btnFullScreen.TabIndex = 0;
@@ -98,7 +98,7 @@ namespace se.nightri.QC15_TV_Badge
             this.headingCenter.Location = new System.Drawing.Point(0, 0);
             this.headingCenter.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.headingCenter.Name = "headingCenter";
-            this.headingCenter.Size = new System.Drawing.Size(3808, 75);
+            this.headingCenter.Size = new System.Drawing.Size(3244, 75);
             this.headingCenter.TabIndex = 4;
             this.headingCenter.Text = "QUEERCON v.15 NETWORK HEALTH";
             this.headingCenter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -106,7 +106,7 @@ namespace se.nightri.QC15_TV_Badge
             // btnWindow
             // 
             this.btnWindow.Location = new System.Drawing.Point(348, 23);
-            this.btnWindow.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnWindow.Margin = new System.Windows.Forms.Padding(6);
             this.btnWindow.Name = "btnWindow";
             this.btnWindow.Size = new System.Drawing.Size(150, 44);
             this.btnWindow.TabIndex = 5;
@@ -117,7 +117,7 @@ namespace se.nightri.QC15_TV_Badge
             // btnSql
             // 
             this.btnSql.Location = new System.Drawing.Point(598, 23);
-            this.btnSql.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSql.Margin = new System.Windows.Forms.Padding(6);
             this.btnSql.Name = "btnSql";
             this.btnSql.Size = new System.Drawing.Size(150, 44);
             this.btnSql.TabIndex = 6;
@@ -132,7 +132,7 @@ namespace se.nightri.QC15_TV_Badge
             "Demo Off",
             "Demo On"});
             this.demoSelect.Location = new System.Drawing.Point(884, 23);
-            this.demoSelect.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.demoSelect.Margin = new System.Windows.Forms.Padding(6);
             this.demoSelect.Name = "demoSelect";
             this.demoSelect.Size = new System.Drawing.Size(238, 33);
             this.demoSelect.TabIndex = 7;
@@ -143,7 +143,7 @@ namespace se.nightri.QC15_TV_Badge
             this.decryptValue.AutoSize = true;
             this.decryptValue.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.decryptValue.ForeColor = System.Drawing.Color.Lime;
-            this.decryptValue.Location = new System.Drawing.Point(1014, 75);
+            this.decryptValue.Location = new System.Drawing.Point(828, 75);
             this.decryptValue.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.decryptValue.Name = "decryptValue";
             this.decryptValue.Size = new System.Drawing.Size(386, 79);
@@ -158,16 +158,16 @@ namespace se.nightri.QC15_TV_Badge
             this.label1.Location = new System.Drawing.Point(172, 75);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(870, 79);
+            this.label1.Size = new System.Drawing.Size(694, 79);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Decrypted In Range:";
+            this.label1.Text = "File Decrypted:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Lime;
-            this.label2.Location = new System.Drawing.Point(1378, 75);
+            this.label2.Location = new System.Drawing.Point(1191, 75);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 79);
@@ -408,7 +408,7 @@ namespace se.nightri.QC15_TV_Badge
             // sqlIp
             // 
             this.sqlIp.Location = new System.Drawing.Point(2704, 23);
-            this.sqlIp.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.sqlIp.Margin = new System.Windows.Forms.Padding(6);
             this.sqlIp.Name = "sqlIp";
             this.sqlIp.Size = new System.Drawing.Size(148, 31);
             this.sqlIp.TabIndex = 36;
@@ -440,7 +440,7 @@ namespace se.nightri.QC15_TV_Badge
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnRestore;
-            this.ClientSize = new System.Drawing.Size(3808, 2002);
+            this.ClientSize = new System.Drawing.Size(3244, 2002);
             this.Controls.Add(this.timeRefresh);
             this.Controls.Add(this.critical0);
             this.Controls.Add(this.sqlIp);
@@ -473,7 +473,7 @@ namespace se.nightri.QC15_TV_Badge
             this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.headingCenter);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "StartFrame";
             this.Text = "QC TV";
             this.Load += new System.EventHandler(this.Form1_Load);
