@@ -51,19 +51,19 @@ namespace se.nightri.QC15_TV_Badge
             this.critical6 = new System.Windows.Forms.Label();
             this.critical7 = new System.Windows.Forms.Label();
             this.critical8 = new System.Windows.Forms.Label();
-            this.top8 = new System.Windows.Forms.Label();
-            this.top7 = new System.Windows.Forms.Label();
-            this.top6 = new System.Windows.Forms.Label();
-            this.top5 = new System.Windows.Forms.Label();
-            this.top4 = new System.Windows.Forms.Label();
-            this.top3 = new System.Windows.Forms.Label();
-            this.top2 = new System.Windows.Forms.Label();
-            this.top1 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.sqlIp = new System.Windows.Forms.TextBox();
             this.critical0 = new System.Windows.Forms.Label();
             this.timeRefresh = new System.Windows.Forms.TextBox();
+            this.critical16 = new System.Windows.Forms.Label();
+            this.critical15 = new System.Windows.Forms.Label();
+            this.critical14 = new System.Windows.Forms.Label();
+            this.critical13 = new System.Windows.Forms.Label();
+            this.critical12 = new System.Windows.Forms.Label();
+            this.critical11 = new System.Windows.Forms.Label();
+            this.critical10 = new System.Windows.Forms.Label();
+            this.critical9 = new System.Windows.Forms.Label();
+            this.LastSeen = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnFullScreen
@@ -284,115 +284,6 @@ namespace se.nightri.QC15_TV_Badge
             this.critical8.TabIndex = 24;
             this.critical8.Text = "Horationion [SEC] 127 Links";
             // 
-            // top8
-            // 
-            this.top8.AutoSize = true;
-            this.top8.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.top8.ForeColor = System.Drawing.Color.Lime;
-            this.top8.Location = new System.Drawing.Point(2378, 1580);
-            this.top8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.top8.Name = "top8";
-            this.top8.Size = new System.Drawing.Size(1222, 79);
-            this.top8.TabIndex = 34;
-            this.top8.Text = "Horationion [SEC] 127 Links";
-            // 
-            // top7
-            // 
-            this.top7.AutoSize = true;
-            this.top7.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.top7.ForeColor = System.Drawing.Color.Lime;
-            this.top7.Location = new System.Drawing.Point(2378, 1505);
-            this.top7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.top7.Name = "top7";
-            this.top7.Size = new System.Drawing.Size(738, 79);
-            this.top7.TabIndex = 32;
-            this.top7.Text = "Skippy 113 Links";
-            // 
-            // top6
-            // 
-            this.top6.AutoSize = true;
-            this.top6.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.top6.ForeColor = System.Drawing.Color.Lime;
-            this.top6.Location = new System.Drawing.Point(2378, 1430);
-            this.top6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.top6.Name = "top6";
-            this.top6.Size = new System.Drawing.Size(738, 79);
-            this.top6.TabIndex = 31;
-            this.top6.Text = "Skippy 113 Links";
-            // 
-            // top5
-            // 
-            this.top5.AutoSize = true;
-            this.top5.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.top5.ForeColor = System.Drawing.Color.Lime;
-            this.top5.Location = new System.Drawing.Point(2378, 1355);
-            this.top5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.top5.Name = "top5";
-            this.top5.Size = new System.Drawing.Size(738, 79);
-            this.top5.TabIndex = 30;
-            this.top5.Text = "Skippy 113 Links";
-            // 
-            // top4
-            // 
-            this.top4.AutoSize = true;
-            this.top4.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.top4.ForeColor = System.Drawing.Color.Lime;
-            this.top4.Location = new System.Drawing.Point(2378, 1280);
-            this.top4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.top4.Name = "top4";
-            this.top4.Size = new System.Drawing.Size(738, 79);
-            this.top4.TabIndex = 29;
-            this.top4.Text = "Skippy 113 Links";
-            // 
-            // top3
-            // 
-            this.top3.AutoSize = true;
-            this.top3.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.top3.ForeColor = System.Drawing.Color.Lime;
-            this.top3.Location = new System.Drawing.Point(2378, 1205);
-            this.top3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.top3.Name = "top3";
-            this.top3.Size = new System.Drawing.Size(738, 79);
-            this.top3.TabIndex = 28;
-            this.top3.Text = "Skippy 113 Links";
-            // 
-            // top2
-            // 
-            this.top2.AutoSize = true;
-            this.top2.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.top2.ForeColor = System.Drawing.Color.Lime;
-            this.top2.Location = new System.Drawing.Point(2378, 1130);
-            this.top2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.top2.Name = "top2";
-            this.top2.Size = new System.Drawing.Size(738, 79);
-            this.top2.TabIndex = 27;
-            this.top2.Text = "Skippy 113 Links";
-            // 
-            // top1
-            // 
-            this.top1.AutoSize = true;
-            this.top1.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.top1.ForeColor = System.Drawing.Color.Lime;
-            this.top1.Location = new System.Drawing.Point(2378, 1055);
-            this.top1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.top1.Name = "top1";
-            this.top1.Size = new System.Drawing.Size(738, 79);
-            this.top1.TabIndex = 26;
-            this.top1.Text = "Skippy 113 Links";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Lime;
-            this.label21.Location = new System.Drawing.Point(2864, 938);
-            this.label21.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(562, 79);
-            this.label21.TabIndex = 25;
-            this.label21.Text = "Top In Range";
-            this.label21.Click += new System.EventHandler(this.label21_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -432,7 +323,115 @@ namespace se.nightri.QC15_TV_Badge
             this.timeRefresh.Name = "timeRefresh";
             this.timeRefresh.Size = new System.Drawing.Size(100, 31);
             this.timeRefresh.TabIndex = 38;
-            this.timeRefresh.Text = "30";
+            this.timeRefresh.Text = "1200";
+            // 
+            // critical16
+            // 
+            this.critical16.AutoSize = true;
+            this.critical16.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.critical16.ForeColor = System.Drawing.Color.Lime;
+            this.critical16.Location = new System.Drawing.Point(2378, 1405);
+            this.critical16.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.critical16.Name = "critical16";
+            this.critical16.Size = new System.Drawing.Size(1222, 79);
+            this.critical16.TabIndex = 46;
+            this.critical16.Text = "Horationion [SEC] 127 Links";
+            // 
+            // critical15
+            // 
+            this.critical15.AutoSize = true;
+            this.critical15.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.critical15.ForeColor = System.Drawing.Color.Lime;
+            this.critical15.Location = new System.Drawing.Point(2378, 1330);
+            this.critical15.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.critical15.Name = "critical15";
+            this.critical15.Size = new System.Drawing.Size(738, 79);
+            this.critical15.TabIndex = 45;
+            this.critical15.Text = "Skippy 113 Links";
+            // 
+            // critical14
+            // 
+            this.critical14.AutoSize = true;
+            this.critical14.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.critical14.ForeColor = System.Drawing.Color.Lime;
+            this.critical14.Location = new System.Drawing.Point(2378, 1255);
+            this.critical14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.critical14.Name = "critical14";
+            this.critical14.Size = new System.Drawing.Size(738, 79);
+            this.critical14.TabIndex = 44;
+            this.critical14.Text = "Skippy 113 Links";
+            // 
+            // critical13
+            // 
+            this.critical13.AutoSize = true;
+            this.critical13.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.critical13.ForeColor = System.Drawing.Color.Lime;
+            this.critical13.Location = new System.Drawing.Point(2378, 1180);
+            this.critical13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.critical13.Name = "critical13";
+            this.critical13.Size = new System.Drawing.Size(738, 79);
+            this.critical13.TabIndex = 43;
+            this.critical13.Text = "Skippy 113 Links";
+            // 
+            // critical12
+            // 
+            this.critical12.AutoSize = true;
+            this.critical12.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.critical12.ForeColor = System.Drawing.Color.Lime;
+            this.critical12.Location = new System.Drawing.Point(2378, 1105);
+            this.critical12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.critical12.Name = "critical12";
+            this.critical12.Size = new System.Drawing.Size(738, 79);
+            this.critical12.TabIndex = 42;
+            this.critical12.Text = "Skippy 113 Links";
+            // 
+            // critical11
+            // 
+            this.critical11.AutoSize = true;
+            this.critical11.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.critical11.ForeColor = System.Drawing.Color.Lime;
+            this.critical11.Location = new System.Drawing.Point(2378, 1030);
+            this.critical11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.critical11.Name = "critical11";
+            this.critical11.Size = new System.Drawing.Size(738, 79);
+            this.critical11.TabIndex = 41;
+            this.critical11.Text = "Skippy 113 Links";
+            // 
+            // critical10
+            // 
+            this.critical10.AutoSize = true;
+            this.critical10.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.critical10.ForeColor = System.Drawing.Color.Lime;
+            this.critical10.Location = new System.Drawing.Point(2378, 955);
+            this.critical10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.critical10.Name = "critical10";
+            this.critical10.Size = new System.Drawing.Size(738, 79);
+            this.critical10.TabIndex = 40;
+            this.critical10.Text = "Skippy 113 Links";
+            // 
+            // critical9
+            // 
+            this.critical9.AutoSize = true;
+            this.critical9.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.critical9.ForeColor = System.Drawing.Color.Lime;
+            this.critical9.Location = new System.Drawing.Point(2378, 880);
+            this.critical9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.critical9.Name = "critical9";
+            this.critical9.Size = new System.Drawing.Size(738, 79);
+            this.critical9.TabIndex = 39;
+            this.critical9.Text = "Skippy 113 Links";
+            // 
+            // LastSeen
+            // 
+            this.LastSeen.AutoSize = true;
+            this.LastSeen.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastSeen.ForeColor = System.Drawing.Color.Lime;
+            this.LastSeen.Location = new System.Drawing.Point(2186, 1921);
+            this.LastSeen.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LastSeen.Name = "LastSeen";
+            this.LastSeen.Size = new System.Drawing.Size(167, 36);
+            this.LastSeen.TabIndex = 47;
+            this.LastSeen.Text = "LastSeen";
             // 
             // StartFrame
             // 
@@ -441,19 +440,19 @@ namespace se.nightri.QC15_TV_Badge
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnRestore;
             this.ClientSize = new System.Drawing.Size(3244, 2002);
+            this.Controls.Add(this.LastSeen);
+            this.Controls.Add(this.critical16);
+            this.Controls.Add(this.critical15);
+            this.Controls.Add(this.critical14);
+            this.Controls.Add(this.critical13);
+            this.Controls.Add(this.critical12);
+            this.Controls.Add(this.critical11);
+            this.Controls.Add(this.critical10);
+            this.Controls.Add(this.critical9);
             this.Controls.Add(this.timeRefresh);
             this.Controls.Add(this.critical0);
             this.Controls.Add(this.sqlIp);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.top8);
-            this.Controls.Add(this.top7);
-            this.Controls.Add(this.top6);
-            this.Controls.Add(this.top5);
-            this.Controls.Add(this.top4);
-            this.Controls.Add(this.top3);
-            this.Controls.Add(this.top2);
-            this.Controls.Add(this.top1);
-            this.Controls.Add(this.label21);
             this.Controls.Add(this.critical8);
             this.Controls.Add(this.critical7);
             this.Controls.Add(this.critical6);
@@ -502,19 +501,19 @@ namespace se.nightri.QC15_TV_Badge
         private System.Windows.Forms.Label critical6;
         private System.Windows.Forms.Label critical7;
         private System.Windows.Forms.Label critical8;
-        private System.Windows.Forms.Label top8;
-        private System.Windows.Forms.Label top7;
-        private System.Windows.Forms.Label top6;
-        private System.Windows.Forms.Label top5;
-        private System.Windows.Forms.Label top4;
-        private System.Windows.Forms.Label top3;
-        private System.Windows.Forms.Label top2;
-        private System.Windows.Forms.Label top1;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox sqlIp;
         private System.Windows.Forms.Label critical0;
         private System.Windows.Forms.TextBox timeRefresh;
+        private System.Windows.Forms.Label critical16;
+        private System.Windows.Forms.Label critical15;
+        private System.Windows.Forms.Label critical14;
+        private System.Windows.Forms.Label critical13;
+        private System.Windows.Forms.Label critical12;
+        private System.Windows.Forms.Label critical11;
+        private System.Windows.Forms.Label critical10;
+        private System.Windows.Forms.Label critical9;
+        private System.Windows.Forms.Label LastSeen;
     }
 }
 
